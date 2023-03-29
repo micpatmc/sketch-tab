@@ -2,28 +2,38 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Drawing App JavaScript | CodingNepal</title>
+    <title>Example</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8f468c9a26.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
   </head>
   <body>
-    <div class="background">
+    <div class="background" id="background_ID">
+        <input type="checkbox" id="toggle">
+
+      <!-- Canvas (What we draw on) -->
         <div class="canvas_container">
         </div>
+        <!-- Toolbar (Ex: Brush, eraser, clear) -->
         <div class="toolbar">
             <h1>toolbar</h1>
-            <a href="mailto:michael@michaelmcgarvey.com" class="toolbar_button" target="_blank">
-                paint <i class="fa-regular fa-paintbrush-fine"></i>
+            <a href="" class="toolbar_button" target="_blank">
+                <i class="fa-solid fa-paintbrush"></i>
             </a>
-            <a href="mailto:michael@michaelmcgarvey.com" class="toolbar_button" target="_blank">
-                eraser <i class="fa-regular fa-paper-plane"></i>
+            <a href="" class="toolbar_button" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
             </a>
-            <a href="mailto:michael@michaelmcgarvey.com" class="toolbar_button" target="_blank">
-                clear <i class="fa-regular fa-paper-plane"></i>
+            <a href="" class="toolbar_button" target="_blank">
+                <i class="fa-solid fa-trash"></i>
             </a>
         </div>
+        <!-- Toolbar support (Ex: Colors, brush size) -->
+        <div class="toolbar_support">
+          <input type="range" id="brush_slider" min="1" max="10" value="5">
+        </div>
+        <div class="background_bottom" id="background_bottom_ID">
+        </div>  
     </div>
   </body>
 </html>
