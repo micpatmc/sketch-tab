@@ -13,26 +13,32 @@
         <input type="checkbox" id="toggle">
 
       <!-- Canvas (What we draw on) -->
-        <div class="canvas_container">
+        <div class="drawing-board">
+          <canvas id="drawing-board"></canvas>
         </div>
         <!-- Toolbar (Ex: Brush, eraser, clear) -->
-        <div class="toolbar">
+        <div class="toolbar" id="toolbar">
             <h1>toolbar</h1>
-            <a href="" class="toolbar_button" target="_blank">
+            <input id="stroke" name='stroke' type="color">
+            <button class="option active tool" id="brush" target="_blank">
                 <i class="fa-solid fa-paintbrush"></i>
-            </a>
-            <a href="" class="toolbar_button" target="_blank">
+            </button>
+            <button class="option tool" id="rectangle" target="_blank">
+                <i class="fa-solid fa-paintbrush"></i>
+            </button>
+            <button class="option tool" id="circle" target="_blank">
+              <i class="fa-solid fa-paintbrush"></i>
+            </button>
+            <button class="option tool" id="triangle" target="_blank">
+              <i class="fa-solid fa-paintbrush"></i>
+            </button>
+            <button class="option tool" id="eraser" target="_blank">
                 <i class="fa-solid fa-eraser"></i>
-            </a>
-            <a href="" class="toolbar_button" target="_blank">
-                <i class="fa-solid fa-trash"></i>
-            </a>
+            </button>
         </div>
         <!-- Toolbar support (Ex: Colors, brush size) -->
-        <div class="toolbar_support">
-          <input type="range" id="brush_slider" min="1" max="10" value="5">
-        </div>
-        <div class="background_bottom" id="background_bottom_ID">
+        <input type="range" id="brush-slider" min="1" max="10" value="5">
+        <div class="background-bottom" id="background_bottom_ID">
         </div>  
     </div>
   </body>

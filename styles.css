@@ -6,15 +6,6 @@
 }
 
 .background {
-    background-color: #87f3ff;
-    background-color: #1f5d61;
-    
-    background-color: #ffa0a0;
-    background-color: #611f1f;
-
-    background-color: #b0ffc5;
-    background-color: #1f6129;
-
     position: relative;
     background-color: #4af778;
     display: flex;
@@ -22,11 +13,11 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    z-index: -2;
+    z-index: 0;
 }
 
-.background_bottom {
-    top: 36vw;
+.background-bottom {
+    top: 37.75vw;
     width: 90vw;
     height: 9vw;
     position: absolute;
@@ -36,7 +27,7 @@
     z-index: -1;
 }
 
-.canvas_container {
+.drawing-board {
     position: absolute;
     top: 3vw;
     margin: auto;
@@ -56,15 +47,16 @@
     width: 100%;
     margin: 0;
 }
-
-.toolbar_support {
+/* 
+.toolbar-support {
     position: absolute;
     bottom: 0;
     text-align: center;
-    height: 10vw;
+    height: 2vw;
     width: 100%;
     margin: 0;
-}
+    background-color: #1f5d61;
+} */
 
 .toolbar h1 {
     position: relative;
@@ -78,9 +70,9 @@
     text-decoration: none;
 }
 
-.toolbar_button {
+.option {
     position: relative;
-    top: 2vw;
+    top: 0.5vw;
     margin: 1vw;
     font-size: 1vw;
     background-color: white;
@@ -90,14 +82,24 @@
     box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
 }
 
-.toolbar_button:hover {
+.option:hover {
+    cursor: pointer;
     background-color: rgb(180, 180, 180);
 }
 
-#brush_slider {
+.option:active {
+    background-color: rgb(133, 133, 133);
+}
+
+#brush-slider {
     position: absolute;
-    top: 6vw;
-    left: 43.5vw;
+    bottom: 3vw;
+    left: 46.25vw;
+}
+
+#stroke {
+    position: relative;
+    top: 1vw;
 }
 
 #toggle {
@@ -107,4 +109,10 @@
     display: inline-block;
     width: 2vw;
     height: 2vw;
+}
+
+#drawing-board {
+    width: 100%;
+    height: 100%;
+    border-radius: 2vw;
 }
