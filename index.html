@@ -19,7 +19,7 @@
         <!-- Toolbar (Ex: Brush, eraser, clear) -->
         <div class="toolbar" id="toolbar">
             <h1>toolbar</h1>
-            <input id="stroke" name='stroke' type="color">
+            <input id="fill-color" type="checkbox">
             <button class="option active tool" id="brush" target="_blank">
                 <i class="fa-solid fa-paintbrush"></i>
             </button>
@@ -35,6 +35,34 @@
             <button class="option tool" id="eraser" target="_blank">
                 <i class="fa-solid fa-eraser"></i>
             </button>
+            <button class="option tool" id="clear-canvas" target="_blank">
+              <i class="fa-solid fa-eraser"></i>
+            </button>
+            <button class="option tool" id="save-image" target="_blank">
+              <i class="fa-solid fa-eraser"></i>
+            </button>
+            <div class="colors">
+              <button class="option" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
+              </button>
+              <button class="option selected" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
+              </button>
+              <button class="option" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
+              </button>
+              <button class="option" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
+              </button>
+              <button class="option" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
+              </button>
+              <button class="option" target="_blank">
+                <i class="fa-solid fa-eraser"></i>
+                <input id="color-picker" type="color">
+              </button>
+            </div>
+            
         </div>
         <!-- Toolbar support (Ex: Colors, brush size) -->
         <input type="range" id="brush-slider" min="1" max="10" value="5">
