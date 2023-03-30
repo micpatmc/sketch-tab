@@ -97,7 +97,7 @@
     left: 46.25vw;
 }
 
-#stroke {
+#color-picker {
     position: relative;
     top: 1vw;
 }
@@ -116,3 +116,38 @@
     height: 100%;
     border-radius: 2vw;
 }
+
+.colors .option:nth-child(1) {
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+}
+
+.colors .option:nth-child(2) {
+    background-color: #000;
+}
+
+.colors .option:nth-child(3) {
+    background-color: #E02020;
+}
+
+.colors .option:nth-child(4) {
+    background-color: #6DD400;
+}
+
+.colors .option:nth-child(5) {
+    background-color: #4A98F7;
+}
+
+.colors .option:hover {
+    cursor: pointer;
+    /* background-color: rgb(180, 180, 180); */
+}
+
+.colors .option:active {
+    /* background-color: rgb(133, 133, 133); */
+}
+
+.option #color-picker{
+    opacity: 1;
+    cursor: pointer;
+  }
