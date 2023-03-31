@@ -265,28 +265,33 @@
     opacity: 1;
 }
 
-.colors .option:active {
+.colors .option:hover:active {
     background-color: rgb(133, 133, 133);
 }
 
 .colors .option:nth-child(1) {
     background-color: #fff;
+    color: #fff;
 }
 
 .colors .option:nth-child(2) {
     background-color: #000;
+    color: #000;
 }
 
 .colors .option:nth-child(3) {
     background-color: #E02020;
+    color: #E02020;
 }
 
 .colors .option:nth-child(4) {
     background-color: #6DD400;
+    color: #6DD400;
 }
 
 .colors .option:nth-child(5) {
     background-color: #4A98F7;
+    color: #4A98F7;
 }
 
 .colors .option:nth-child(6) {

@@ -76,6 +76,15 @@ const drawTriangle = (e) => {
     fillColor.checked ? ctx.fill() : ctx.stroke();
 }
 
+const drawLine = (e) => {
+    ctx.beginPath();
+
+    ctx.moveTo(prevMouseX, prevMouseY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.closePath();
+    ctx.stroke();
+}
+
 const startDraw = (e) => {
     isDrawing = true;
     prevMouseX = e.offsetX;
@@ -111,6 +120,10 @@ const drawing = (e) => {
     {
         drawTriangle(e);
     }
+    else if (selectedTool === "line")
+    {
+        drawLine(e);
+    }
 }
 
 toolBtns.forEach(btn => {
@@ -141,7 +154,7 @@ colorBtns.forEach(btn => {
         }
 
         btn.classList.add("selected");
-        selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
+        selectedColor = window.getComputedStyle(btn).getPropertyValue("color");
     });
 });
 
@@ -158,7 +171,8 @@ saveImg.addEventListener("click", () => {
 });
 
 colorPicker.addEventListener("change", () => {
-    colorPicker.style.background = colorPicker.value;
+    colorPicker.style.backgroundColor = colorPicker.value;
+    colorPicker.style.color = colorPicker.value;
     colorPicker.click();
 });
 
