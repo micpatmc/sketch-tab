@@ -16,15 +16,38 @@
     z-index: 0;
 }
 
-.background-bottom {
-    top: 37.75vw;
-    width: 90vw;
-    height: 9vw;
+.background-bottom-1 {
     position: absolute;
+    bottom: 2vw;
+    left: 18vw;
+    width: 20vw;
+    height: 9vw;
     border-radius: 1vw;
-    background-color: #1f6129;
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
-    z-index: -1;
+    z-index: 0;
+}
+
+.background-bottom-2 {
+    position: absolute;
+    margin: auto;
+    bottom: 2vw;
+    right: 40vw;
+    width: 20vw;
+    height: 9vw;
+    border-radius: 1vw;
+    box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.background-bottom-3 {
+    position: absolute;
+    bottom: 2vw;
+    right: 18vw;
+    width: 20vw;
+    height: 9vw;
+    border-radius: 1vw;
+    box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
+    z-index: 0;
 }
 
 .drawing-board {
@@ -60,10 +83,11 @@
 
 .toolbar h1 {
     position: relative;
-    top: 0.8vw;
-    font-size: 1vw;
+    bottom: 2.5vw;
+    font-size: 1.5vw;
     letter-spacing: .5vw;
     color: white;
+    font-weight: 700;
 }
 
 .toolbar a {
@@ -72,14 +96,32 @@
 
 .option {
     position: relative;
-    top: 0.5vw;
+    top: 0vw;
     margin: 1vw;
-    font-size: 1vw;
+    font-size: 0.8vw;
+    background-color: white;
+    color: black;
+    border: 0.15vw solid #4CAF50; /* Green */
+    padding: .5vw;
+    box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
+    border-radius: 0.75vw;
+}
+
+#eraser {
+    left: 9.5vw;
+}
+
+
+.colors .option {
+    position: relative;
+    top: 0vw;
+    margin: 0.5vw;
     background-color: white;
     color: black;
     border: 2px solid #4CAF50; /* Green */
-    padding: .5vw;
+    padding: .6vw;
     box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
+    border-radius: 0vw;
 }
 
 .option:hover {
@@ -93,8 +135,8 @@
 
 #brush-slider {
     position: absolute;
-    bottom: 3vw;
-    left: 46.25vw;
+    bottom: 1.5vw;
+    left: 5.75vw;
 }
 
 #color-picker {
@@ -115,6 +157,32 @@
     width: 100%;
     height: 100%;
     border-radius: 2vw;
+}
+
+.colors {
+    position: absolute;
+    width: 100%;
+    bottom: 1vw;
+}
+
+.tools {
+    position: absolute;
+    left: 1vw;
+    bottom: 5vw;
+    z-index: 5;
+}
+
+.shapes {
+    position: absolute;
+    left: 1vw;
+    bottom: 5vw;
+
+}
+
+.other {
+    position: absolute;
+    left: 1vw;
+    bottom: 5vw;
 }
 
 .colors .option:nth-child(1) {
@@ -138,16 +206,14 @@
     background-color: #4A98F7;
 }
 
+.colors .option:nth-child(6) {
+    background-color: #fff;
+}
+
 .colors .option:hover {
     cursor: pointer;
-    /* background-color: rgb(180, 180, 180); */
 }
 
 .colors .option:active {
     /* background-color: rgb(133, 133, 133); */
 }
-
-.option #color-picker{
-    opacity: 1;
-    cursor: pointer;
-  }

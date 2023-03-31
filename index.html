@@ -9,7 +9,7 @@
     <script src="index.js" defer></script>
   </head>
   <body>
-    <div class="background" id="background_ID">
+    <div class="background" id="background-ID">
         <input type="checkbox" id="toggle">
 
       <!-- Canvas (What we draw on) -->
@@ -18,56 +18,59 @@
         </div>
         <!-- Toolbar (Ex: Brush, eraser, clear) -->
         <div class="toolbar" id="toolbar">
+            <div class="background-bottom-1" id="background-bottom-ID-1">
             <h1>toolbar</h1>
+              <div class="tools">
+                <button class="option active tool" id="brush">
+                    <i class="fa-solid fa-paintbrush"></i>
+                </button>
+                <!-- Toolbar support (Ex: Colors, brush size) -->
+                <input type="range" id="brush-slider" min="1" max="10" value="5">
+                <button class="option tool" id="eraser">
+                  <i class="fa-solid fa-eraser"></i>
+                </button>
+              </div>
+              <div class="colors">
+                <button class="option">
+                </button>
+                <button class="option selected">
+                </button>
+                <button class="option">
+                </button>
+                <button class="option">
+                </button>
+                <button class="option">
+                </button>
+                <input class="option" id="color-picker" type="color">
+              </div>
+            </div> 
+        <div class="background-bottom-2" id="background-bottom-ID-2">
+          <h1>shapes</h1>
+          <div class="shapes">
             <input id="fill-color" type="checkbox">
-            <button class="option active tool" id="brush" target="_blank">
-                <i class="fa-solid fa-paintbrush"></i>
+            <button class="option tool" id="rectangle">
+              <i class="fa-regular fa-square"></i>
             </button>
-            <button class="option tool" id="rectangle" target="_blank">
-                <i class="fa-solid fa-paintbrush"></i>
+            <button class="option tool" id="circle">
+              <i class="fa-regular fa-circle"></i>
             </button>
-            <button class="option tool" id="circle" target="_blank">
-              <i class="fa-solid fa-paintbrush"></i>
+            <button class="option tool" id="triangle">
+              <i class="fa-solid fa-caret-up"></i>
             </button>
-            <button class="option tool" id="triangle" target="_blank">
-              <i class="fa-solid fa-paintbrush"></i>
-            </button>
-            <button class="option tool" id="eraser" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-            </button>
-            <button class="option tool" id="clear-canvas" target="_blank">
-              <i class="fa-solid fa-eraser"></i>
-            </button>
-            <button class="option tool" id="save-image" target="_blank">
-              <i class="fa-solid fa-eraser"></i>
-            </button>
-            <div class="colors">
-              <button class="option" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-              </button>
-              <button class="option selected" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-              </button>
-              <button class="option" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-              </button>
-              <button class="option" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-              </button>
-              <button class="option" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-              </button>
-              <button class="option" target="_blank">
-                <i class="fa-solid fa-eraser"></i>
-                <input id="color-picker" type="color">
-              </button>
-            </div>
-            
-        </div>
-        <!-- Toolbar support (Ex: Colors, brush size) -->
-        <input type="range" id="brush-slider" min="1" max="10" value="5">
-        <div class="background-bottom" id="background_bottom_ID">
+          </div>
         </div>  
+        <div class="background-bottom-3" id="background-bottom-ID-3">
+          <h1>other</h1>
+          <div class="other">
+            <button class="option tool" id="clear-canvas">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+            <button class="option tool" id="save-image">
+              <i class="fa-regular fa-floppy-disk"></i>
+            </button>
+          </div>
+        </div>              
+        </div>     
     </div>
   </body>
 </html>
