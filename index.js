@@ -1,5 +1,5 @@
 // Pick random background color
-var background_colors = ["#87bdff", "#ffa0a0", "#b0ffc5", "#fb87ff", "#87f3ff" ];
+var background_colors = ["#bedcff", "#ffc4c4", "#c9ffd8", "#fdbcff", "#bcf8ff" ];
 var background_bottom_colors = ["#1f3c61", "#611f1f", "#1f6129", "#5e1f61", "#1f5d61"];
 var ran = Math.floor(Math.random() * background_colors.length);
 
@@ -18,7 +18,9 @@ colorBtns = document.querySelectorAll(".colors .option");
 colorPicker = document.querySelector("#color-picker");
 clearCanvas = document.querySelector("#clear-canvas");
 saveImg = document.querySelector("#save-image");
+toggle = document.querySelector("#toggle");
 const ctx = canvas.getContext("2d");
+
 
 let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
@@ -158,8 +160,11 @@ saveImg.addEventListener("click", () => {
 colorPicker.addEventListener("change", () => {
     colorPicker.style.background = colorPicker.value;
     colorPicker.click();
-})
+});
 
-canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mouseup", () => isDrawing = false);
+if (!toggle.checked)
+{
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mousemove", drawing);
+    canvas.addEventListener("mouseup", () => isDrawing = false);
+}

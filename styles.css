@@ -3,12 +3,39 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
+/* Background CSS */
 .background {
-    position: relative;
-    background-color: #4af778;
     display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+/* SEARCHING CSS */
+.searching-background {
+    display: fixed;
+    position: relative;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+/* DRAWING CSS */
+.drawing-background {
+    display: flex;
+    position: fixed;
+    background-color: transparent;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -25,7 +52,18 @@
     border-radius: 1vw;
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
     z-index: 0;
+    opacity: 0.8;
 }
+
+.background-bottom-1:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+/* 
+.background-bottom-1:hover:after {
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+} */
 
 .background-bottom-2 {
     position: absolute;
@@ -37,6 +75,12 @@
     border-radius: 1vw;
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
     z-index: 0;
+    opacity: 0.8;
+}
+
+.background-bottom-2:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
 }
 
 .background-bottom-3 {
@@ -48,8 +92,15 @@
     border-radius: 1vw;
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
     z-index: 0;
+    opacity: 0.8;
 }
 
+.background-bottom-3:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Canvas CSS */
 .drawing-board {
     position: absolute;
     top: 3vw;
@@ -60,7 +111,7 @@
     border-radius: 2vw;
     box-shadow: 0.8vw 0.8vw 0px rgb(0, 0, 0, 0.5);
 }
-
+/* Toolbar CSS */
 .toolbar {
     position: absolute;
     bottom: 0;
@@ -70,30 +121,31 @@
     width: 100%;
     margin: 0;
 }
-/* 
-.toolbar-support {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    height: 2vw;
-    width: 100%;
-    margin: 0;
-    background-color: #1f5d61;
-} */
 
 .toolbar h1 {
     position: relative;
     bottom: 2.5vw;
     font-size: 1.5vw;
     letter-spacing: .5vw;
-    color: white;
+    color: black;
+    text-shadow: 0.1vw 0.1vw 0vw rgb(0, 0, 0, 0.25);
+}
+
+.toolbar p {
+    position: relative;
+    top: 5vw;
+    right: 5vw;
+    font-size: 1vw;
+    color: black;
     font-weight: 700;
+    opacity: 0;
 }
 
 .toolbar a {
     text-decoration: none;
 }
 
+/* Selection boxes CSS */
 .option {
     position: relative;
     top: 0vw;
@@ -101,47 +153,55 @@
     font-size: 0.8vw;
     background-color: white;
     color: black;
-    border: 0.15vw solid #4CAF50; /* Green */
+    border: 0.15vw solid #000000; /* Green */
     padding: .5vw;
     box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
     border-radius: 0.75vw;
-}
-
-#eraser {
-    left: 9.5vw;
-}
-
-
-.colors .option {
-    position: relative;
-    top: 0vw;
-    margin: 0.5vw;
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50; /* Green */
-    padding: .6vw;
-    box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
-    border-radius: 0vw;
+    opacity: 0.8;
 }
 
 .option:hover {
+    opacity: 1;
     cursor: pointer;
-    background-color: rgb(180, 180, 180);
 }
 
 .option:active {
     background-color: rgb(133, 133, 133);
 }
 
+/* Tools CSS */
+.tools {
+    position: absolute;
+    left: 0.5vw;
+    bottom: 5vw;
+    z-index: 5;
+}
+
+#fill-tool {
+    position: absolute;
+    left: 11.5vw;
+}
+
+#eraser {
+    position: absolute;
+    left: 15vw;
+}
+
 #brush-slider {
     position: absolute;
-    bottom: 1.5vw;
-    left: 5.75vw;
+    bottom: 2vw;
+    background: #4af778;
+}
+
+#size-output {
+    position: relative;
+    font-size: 1vw;
+    top: 1.5vw;
 }
 
 #color-picker {
     position: relative;
-    top: 1vw;
+    top: 0.3vw;
 }
 
 #toggle {
@@ -151,6 +211,11 @@
     display: inline-block;
     width: 2vw;
     height: 2vw;
+    z-index: 1;
+}
+
+#toggle:checked ~ .background .drawing-background{
+    opacity: 0;
 }
 
 #drawing-board {
@@ -159,19 +224,7 @@
     border-radius: 2vw;
 }
 
-.colors {
-    position: absolute;
-    width: 100%;
-    bottom: 1vw;
-}
-
-.tools {
-    position: absolute;
-    left: 1vw;
-    bottom: 5vw;
-    z-index: 5;
-}
-
+/* Shapes CSS */
 .shapes {
     position: absolute;
     left: 1vw;
@@ -179,15 +232,45 @@
 
 }
 
+/* Other CSS */
 .other {
     position: absolute;
     left: 1vw;
     bottom: 5vw;
 }
 
+/* Colors CSS */
+.colors {
+    position: absolute;
+    width: 100%;
+    bottom: 1vw;
+}
+
+/* Color selection boxes CSS */
+.colors .option {
+    position: relative;
+    top: 0vw;
+    margin: 0.5vw;
+    background-color: white;
+    color: black;
+    border: 2px solid #000000; /* Green */
+    padding: .6vw;
+    box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
+    border-radius: 0vw;
+    opacity: 0.8;
+}
+
+.colors .option:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.colors .option:active {
+    background-color: rgb(133, 133, 133);
+}
+
 .colors .option:nth-child(1) {
     background-color: #fff;
-    border: 1px solid #bfbfbf;
 }
 
 .colors .option:nth-child(2) {
@@ -210,10 +293,25 @@
     background-color: #fff;
 }
 
-.colors .option:hover {
-    cursor: pointer;
-}
-
-.colors .option:active {
-    /* background-color: rgb(133, 133, 133); */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 6.5vw;
+      -webkit-appearance: none;
+      border-radius: 1vw;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: .6vw;
+      -webkit-appearance: none;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 0.6vw;
+      -webkit-appearance: none;
+      height: 1vw;
+      cursor: pointer;
+      background: #434343;
+      box-shadow: 80px 0 0 80px #f74343;
+    }
 }
