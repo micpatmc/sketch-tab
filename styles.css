@@ -19,9 +19,71 @@
     z-index: 0;
 }
 
+/* Switch CSS */
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    z-index: 1;
+    bottom: 3vw;
+    left: 2vw;    
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* FIX THIS */
+label .switch-input:checked ~ .background .drawing-background {
+    /* opacity: 0; */
+    display: none;
+    z-index: -1;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
 /* SEARCHING CSS */
 .searching-background {
-    display: fixed;
+    display: flex;
     position: relative;
     background-color: transparent;
     align-items: center;
@@ -31,6 +93,43 @@
     z-index: 0;
 }
 
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    background: rgb(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #cac7ff;    
+}
+
+::placeholder {
+    color: #cac7ff;
+}
+
+.search-bar button img {
+    width: 25px;
+}
+
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #59629b;
+    cursor: pointer;
+}
 /* DRAWING CSS */
 .drawing-background {
     display: flex;
@@ -129,6 +228,7 @@
     letter-spacing: .5vw;
     color: black;
     text-shadow: 0.1vw 0.1vw 0vw rgb(0, 0, 0, 0.25);
+    opacity: .8;
 }
 
 .toolbar p {
@@ -202,20 +302,6 @@
 #color-picker {
     position: relative;
     top: 0.3vw;
-}
-
-#toggle {
-    position: absolute;
-    left: 2vw;
-    bottom: 5vw;
-    display: inline-block;
-    width: 2vw;
-    height: 2vw;
-    z-index: 1;
-}
-
-#toggle:checked ~ .background .drawing-background{
-    opacity: 0;
 }
 
 #drawing-board {

@@ -10,12 +10,23 @@
     <script src="index.js" defer></script>
   </head>
   <body>
-    <input id="toggle" type="checkbox"/>
+    <!-- <label>
+      <input class="switch-input" id="switch-input" type="checkbox" checked/>
+    </label> -->
+
+    <label class="switch">
+      <input type="checkbox" checked/>
+      <span class="slider"></span>
+    </label>
+    
     <div class="background" id="background-ID">
 
       <!-- SEARCHING -->
       <div class="searching-background">
-        
+        <form action="https://www.google.com/search" method="get" class="search-bar">
+          <input type="text" placeholder="search anything" name="q">
+          <button type="submit"><img src="./images/search.png" alt=""></button>
+        </form> 
       </div>
 
       <!-- DRAWING -->

@@ -18,7 +18,6 @@ colorBtns = document.querySelectorAll(".colors .option");
 colorPicker = document.querySelector("#color-picker");
 clearCanvas = document.querySelector("#clear-canvas");
 saveImg = document.querySelector("#save-image");
-toggle = document.querySelector("#toggle");
 const ctx = canvas.getContext("2d");
 
 
@@ -176,9 +175,6 @@ colorPicker.addEventListener("change", () => {
     colorPicker.click();
 });
 
-if (!toggle.checked)
-{
-    canvas.addEventListener("mousedown", startDraw);
-    canvas.addEventListener("mousemove", drawing);
-    canvas.addEventListener("mouseup", () => isDrawing = false);
-}
+canvas.addEventListener("mousedown", startDraw);
+canvas.addEventListener("mousemove", drawing);
+canvas.addEventListener("mouseup", () => isDrawing = false);
