@@ -36,13 +36,6 @@
     height: 0;
 }
 
-/* FIX THIS IN JAVASCRIPT */
-.switch-input:checked ~ .background .drawing-background {
-    /* opacity: 0; */
-    display: none;
-    z-index: -1;
-}
-
 .slider {
     position: absolute;
     cursor: pointer;
@@ -130,6 +123,7 @@ input:checked + .slider:before {
     background: #59629b;
     cursor: pointer;
 }
+
 /* DRAWING CSS */
 .drawing-background {
     display: flex;

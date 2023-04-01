@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Example</title>
+    <title>Chrome Extension</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8f468c9a26.js" crossorigin="anonymous"></script>
@@ -11,19 +11,15 @@
   </head>
   <body>
   
-    <!-- <input class="switch-input" id="switch-input" type="checkbox" checked/> -->
-
-    
-    
     <div class="background" id="background-ID">
 
-      <label class="switch">
-        <input type="checkbox" checked/>
+      <label class="switch" for="switch-input">
+        <input type="checkbox" id="switch-input"/>
         <span class="slider"></span>
       </label>
 
       <!-- SEARCHING -->
-      <div class="searching-background">
+      <div class="searching-background" id="searching-background">
         <form action="https://www.google.com/search" method="get" class="search-bar">
           <input type="text" placeholder="search anything" name="q">
           <button type="submit"><img src="./images/search.png" alt=""></button>
@@ -31,7 +27,7 @@
       </div>
 
       <!-- DRAWING -->
-      <div class="drawing-background">
+      <div class="drawing-background" id="drawing-background">
         <!-- Canvas (What we draw on) -->
         <div class="drawing-board">
           <canvas id="drawing-board"></canvas>

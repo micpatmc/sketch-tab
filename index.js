@@ -9,6 +9,28 @@ document.getElementById("background-bottom-ID-1").style.backgroundColor = backgr
 document.getElementById("background-bottom-ID-2").style.backgroundColor = background_bottom_colors[ran];
 document.getElementById("background-bottom-ID-3").style.backgroundColor = background_bottom_colors[ran];
 
+// Switch between searching and drawing
+const checkbox = document.getElementById("switch-input");
+
+const drawingBackground = document.getElementById("drawing-background")
+const searchingBackground = document.getElementById("searching-background")
+
+window.onload = setScreen = () => {
+    drawingBackground.style.opacity = 0; 
+    searchingBackground.style.display = "flex"; 
+};
+
+checkbox.addEventListener("change", (event) => {
+  if (event.currentTarget.checked) {
+    drawingBackground.style.display = "flex";
+    drawingBackground.style.opacity = 1; 
+    searchingBackground.style.display = "none"; 
+  } else {
+    drawingBackground.style.display = "none"; 
+    searchingBackground.style.display = "flex"; 
+  }
+});
+
 // Draw
 const canvas = document.getElementById("drawing-board");
 toolBtns = document.querySelectorAll(".tool");
@@ -96,6 +118,7 @@ const startDraw = (e) => {
 
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
+
 const drawing = (e) => {
     if (!isDrawing) return;
     ctx.putImageData(snapshot, 0, 0);
