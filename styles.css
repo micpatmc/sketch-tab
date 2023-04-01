@@ -36,8 +36,8 @@
     height: 0;
 }
 
-/* FIX THIS */
-label .switch-input:checked ~ .background .drawing-background {
+/* FIX THIS IN JAVASCRIPT */
+.switch-input:checked ~ .background .drawing-background {
     /* opacity: 0; */
     display: none;
     z-index: -1;
