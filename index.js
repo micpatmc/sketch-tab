@@ -1,3 +1,4 @@
+// SELECT COLOR LOGIC
 // Pick random background color
 var background_colors = ["#bedcff", "#ffc4c4", "#c9ffd8", "#fdbcff", "#bcf8ff" ];
 var background_bottom_colors = ["#1f3c61", "#611f1f", "#1f6129", "#5e1f61", "#1f5d61"];
@@ -9,6 +10,7 @@ document.getElementById("background-bottom-ID-1").style.backgroundColor = backgr
 document.getElementById("background-bottom-ID-2").style.backgroundColor = background_bottom_colors[ran];
 document.getElementById("background-bottom-ID-3").style.backgroundColor = background_bottom_colors[ran];
 
+// SWITCH SCREENS LOGIC
 // Switch between searching and drawing
 const checkbox = document.getElementById("switch-input");
 
@@ -18,6 +20,9 @@ const searchingBackground = document.getElementById("searching-background")
 window.onload = setScreen = () => {
     drawingBackground.style.opacity = 0; 
     searchingBackground.style.display = "flex"; 
+
+    drawingBackground.style.zIndex = 0; 
+    searchingBackground.style.zIndex = 1; 
 };
 
 checkbox.addEventListener("change", (event) => {
@@ -25,13 +30,20 @@ checkbox.addEventListener("change", (event) => {
     drawingBackground.style.display = "flex";
     drawingBackground.style.opacity = 1; 
     searchingBackground.style.display = "none"; 
+
+    drawingBackground.style.zIndex = 0; 
+    searchingBackground.style.zIndex = 1; 
   } else {
     drawingBackground.style.display = "none"; 
     searchingBackground.style.display = "flex"; 
+
+    drawingBackground.style.zIndex = 0; 
+    searchingBackground.style.zIndex = 1; 
   }
 });
 
-// Draw
+// DRAWING LOGIC
+// References
 const canvas = document.getElementById("drawing-board");
 toolBtns = document.querySelectorAll(".tool");
 fillColor = document.querySelector("#fill-color");
@@ -42,27 +54,30 @@ clearCanvas = document.querySelector("#clear-canvas");
 saveImg = document.querySelector("#save-image");
 const ctx = canvas.getContext("2d");
 
-
+// Variables to determine mouse position, whether the user is drawing,
+// and then the tool, brush width, and draw color
 let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = "brush",
 brushWidth = 5,
 selectedColor = "#000";
 
+// Set the canvas background to white
 const setCanvasBackground = () => {
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#000";
 }
 
+// Set the canvas background when page first loads
 window.addEventListener("load", () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     setCanvasBackground();
 });
 
+// Draw a rectangle
 const drawRect = (e) => {
-    
     if (!fillColor.checked)
     {
         return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
@@ -70,6 +85,7 @@ const drawRect = (e) => {
     ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
 }
 
+// Draw a circle
 const drawCircle = (e) => {
     ctx.beginPath();
 
@@ -78,15 +94,7 @@ const drawCircle = (e) => {
     fillColor.checked ? ctx.fill() : ctx.stroke();
 }
 
-// line tool
-// const drawTriangle = (e) => {
-//     ctx.beginPath();
-
-//     ctx.moveTo(prevMouseX, prevMouseY);
-//     ctx.lineTo(e.offsetX, e.offsetY);
-//     ctx.stroke();
-// }
-
+// Draw a triangle
 const drawTriangle = (e) => {
     ctx.beginPath();
 
@@ -97,6 +105,7 @@ const drawTriangle = (e) => {
     fillColor.checked ? ctx.fill() : ctx.stroke();
 }
 
+// Draw a line
 const drawLine = (e) => {
     ctx.beginPath();
 
@@ -106,6 +115,7 @@ const drawLine = (e) => {
     ctx.stroke();
 }
 
+// Start drawing
 const startDraw = (e) => {
     isDrawing = true;
     prevMouseX = e.offsetX;
@@ -119,6 +129,7 @@ const startDraw = (e) => {
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
+// What happens during drawing based off the selected tool
 const drawing = (e) => {
     if (!isDrawing) return;
     ctx.putImageData(snapshot, 0, 0);
@@ -148,6 +159,7 @@ const drawing = (e) => {
     }
 }
 
+// Determine which tool is active
 toolBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         var element = document.querySelector(".options .active")
@@ -163,9 +175,7 @@ toolBtns.forEach(btn => {
     });
 });
 
-sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value);
-
-
+// Determine which color is active
 colorBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         var element = document.querySelector(".options .selected")
@@ -180,11 +190,16 @@ colorBtns.forEach(btn => {
     });
 });
 
+// Change the brush width based off UI element
+sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value);
+
+// Clear the canvas and make it all white
 clearCanvas.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     setCanvasBackground();
 });
 
+// Save the current image to the local drive
 saveImg.addEventListener("click", () => {
     const link = document.createElement("a");
     link.download = `${Date.now()}.png`;
@@ -192,12 +207,14 @@ saveImg.addEventListener("click", () => {
     link.click();
 });
 
+// Change the current color to the color selected in the color picker
 colorPicker.addEventListener("change", () => {
     colorPicker.style.backgroundColor = colorPicker.value;
     colorPicker.style.color = colorPicker.value;
     colorPicker.click();
 });
 
+// Listeners for mouse movement
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);

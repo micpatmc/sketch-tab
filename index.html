@@ -5,14 +5,11 @@
     <title>Chrome Extension</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/8f468c9a26.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     <script src="index.js" defer></script>
   </head>
   <body>
   
     <div class="background" id="background-ID">
-
       <label class="switch" for="switch-input">
         <input type="checkbox" id="switch-input"/>
         <span class="slider"></span>
@@ -39,16 +36,16 @@
             <h1>toolbar</h1>
             <div class="tools">
               <button class="option active tool" id="brush">
-                  <i class="fa-solid fa-paintbrush"></i>
+                  <img class="button-image" src="./images/paintbrush-solid.png"></i>
               </button>
               <!-- Brush sizing -->
-              <input type="range" id="brush-slider" value="10" min="1" max="99" oninput="this.nextElementSibling.value = this.value">
+              <input type="range" id="brush-slider" value="10" min="1" max="50" oninput="this.nextElementSibling.value = this.value">
               <output id="size-output">10</output>
               <button class="option tool" id="fill-tool">
-                <i class="fa-solid fa-bucket"></i>
+                <img class="button-image" src="./images/fill-drip-solid.png"></i>
               </button>
               <button class="option tool" id="eraser">
-                <i class="fa-solid fa-eraser"></i>
+                <img class="button-image" src="./images/eraser-solid.png"></i>
               </button>
               </div>
               <!-- Color selection -->
@@ -73,16 +70,16 @@
               <p>fill color</p>
               <input id="fill-color" type="checkbox">
               <button class="option tool" id="rectangle">
-                <i class="fa-solid fa-square"></i>
+                <img class="button-image" src="./images/rectangle.png"></i>
               </button>
               <button class="option tool" id="circle">
-                <i class="fa-solid fa-circle"></i>
+                <img class="button-image" src="./images/circle.png"></i>
               </button>
               <button class="option tool" id="triangle">
-                <i class="fa-solid fa-caret-up"></i>
+                <img class="button-image" src="./images/triangle.png"></i>
               </button>
               <button class="option tool" id="line">
-                <i class="fa-solid fa-caret-up"></i>
+                <img class="button-image" src="./images/line.png"></i>
               </button>
             </div>
           </div>  
@@ -91,10 +88,10 @@
             <h1>other</h1>
             <div class="other">
               <button class="option tool" id="clear-canvas">
-                <i class="fa-solid fa-trash-can"></i>
+                <img class="button-image" src="./images/trash-can-solid.png"></i>
               </button>
               <button class="option tool" id="save-image">
-                <i class="fa-solid fa-floppy-disk"></i>
+                <img class="button-image" src="./images/floppy-disk-solid.png"></i>
               </button>
             </div>
           </div>              

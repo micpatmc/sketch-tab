@@ -27,7 +27,8 @@
     height: 34px;
     z-index: 1;
     bottom: 3vw;
-    left: 2vw;    
+    left: 2vw;
+    z-index: 5;
 }
 
 .switch input { 
@@ -79,21 +80,24 @@ input:checked + .slider:before {
     display: flex;
     position: relative;
     background-color: transparent;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vw;
     z-index: 0;
 }
 
 .search-bar {
-    width: 100%;
-    max-width: 700px;
-    background: rgb(255, 255, 255, 1);
     display: flex;
+    position: absolute;
     align-items: center;
+    top: 200px;
+    max-height: 90px;
+    max-width: 700px;
+    width: 100%;
     border-radius: 60px;
     padding: 10px 20px;
+    background: rgb(255, 255, 255, 1);
     backdrop-filter: blur(4px) saturate(180%);
 }
 
@@ -126,6 +130,7 @@ input:checked + .slider:before {
 
 /* DRAWING CSS */
 .drawing-background {
+    opacity: 0;
     display: flex;
     position: fixed;
     background-color: transparent;
@@ -263,6 +268,11 @@ input:checked + .slider:before {
     background-color: rgb(133, 133, 133);
 }
 
+.button-image {
+    width: 1vw;
+    height: 1vw;
+}
+
 /* Tools CSS */
 .tools {
     position: absolute;
@@ -378,6 +388,7 @@ input:checked + .slider:before {
     background-color: #fff;
 }
 
+/* Range slider CSS */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
