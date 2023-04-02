@@ -55,6 +55,13 @@
     height: 100vh;
     width: 100vw;
     z-index: 0;
+    background-size: auto;
+}
+
+/* File Selection CSS */
+
+#input-file {
+    
 }
 
 /* Switch CSS */
@@ -68,6 +75,7 @@
     left: 2vw;
     z-index: 5;
     animation: slideLeft 1s;
+    box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.2);
 }
 
 .switch input { 
@@ -136,6 +144,55 @@ input:checked + .slider:before {
     width: 100vw;
     z-index: 0;
     animation: slideDown 0.75s;
+}
+
+/* Settings CSS */
+.settings-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.settings {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    animation: slideDown 1.25s;
+}
+
+.settings-button {
+    font-size: 0.4vw;
+    background-color: white;
+    color: black;
+    border: 0.15vw solid #000000; /* Green */
+    padding: .5vw;
+    box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5);
+    border-radius: 0.75vw;
+    opacity: 0.8;
+}
+
+.settings-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.settings-button:active {
+    background-color: rgb(133, 133, 133);
+}
+
+.button-image-settings {
+    width: 1vw;
+    height: 1vw;
+    color: white;
 }
 
 /* Digital clock CSS */
