@@ -264,4 +264,29 @@ function displayime() {
 
 setInterval(displayime, 10);
     
+// CHANGE BACKGROUND PHOTO
+
+let profilePic = document.getElementById("background-ID");
+let inputFile = document.getElementById("input-file");
+
+inputFile.onchange = function() {
+
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+        localStorage.setItem("recent-image", reader.result);
+    });
+
+    reader.readAsDataURL(this.files[0]);
+    profilePic.style.backgroundImage = "url(" + URL.createObjectURL(inputFile.files[0]) + ")";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const recentImageDataUrl = localStorage.getItem("recent-image");
+
+    if (recentImageDataUrl)
+    {
+        profilePic.style.backgroundImage = "url(" + recentImageDataUrl + ")";
+    }
+});
 
