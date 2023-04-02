@@ -1,53 +1,10 @@
-// SELECT COLOR LOGIC
-// Pick random background color
-var background_colors = ["#bedcff", "#ffc4c4", "#c9ffd8", "#fdbcff", "#bcf8ff" ];
-var background_bottom_colors = ["#1f3c61", "#611f1f", "#1f6129", "#5e1f61", "#1f5d61"];
-var ran = Math.floor(Math.random() * background_colors.length);
-
-document.getElementById("background-ID").style.backgroundColor = background_colors[ran];
-
-document.getElementById("background-bottom-ID-1").style.backgroundColor = background_bottom_colors[ran];
-document.getElementById("background-bottom-ID-2").style.backgroundColor = background_bottom_colors[ran];
-document.getElementById("background-bottom-ID-3").style.backgroundColor = background_bottom_colors[ran];
-
-// SWITCH SCREENS LOGIC
-// Switch between searching and drawing
-const checkbox = document.getElementById("switch-input");
-
-const drawingBackground = document.getElementById("drawing-background")
-const searchingBackground = document.getElementById("searching-background")
-
-window.onload = setScreen = () => {
-    drawingBackground.style.opacity = 0; 
-    searchingBackground.style.display = "flex"; 
-
-    drawingBackground.style.zIndex = 0; 
-    searchingBackground.style.zIndex = 1; 
-};
-
-checkbox.addEventListener("change", (event) => {
-  if (event.currentTarget.checked) {
-    drawingBackground.style.display = "flex";
-    drawingBackground.style.opacity = 1; 
-    searchingBackground.style.display = "none"; 
-
-    drawingBackground.style.zIndex = 0; 
-    searchingBackground.style.zIndex = 1; 
-  } else {
-    drawingBackground.style.display = "none"; 
-    searchingBackground.style.display = "flex"; 
-
-    drawingBackground.style.zIndex = 0; 
-    searchingBackground.style.zIndex = 1; 
-  }
-});
-
 // DRAWING LOGIC
 // References
 const canvas = document.getElementById("drawing-board");
 toolBtns = document.querySelectorAll(".tool");
 fillColor = document.querySelector("#fill-color");
 sizeSlider = document.querySelector("#brush-slider");
+sizeOutput = document.querySelector("#size-output");
 colorBtns = document.querySelectorAll(".colors .option");
 colorPicker = document.querySelector("#color-picker");
 clearCanvas = document.querySelector("#clear-canvas");
@@ -193,6 +150,9 @@ colorBtns.forEach(btn => {
 // Change the brush width based off UI element
 sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value);
 
+// Update the slider value each time it is changed
+sizeSlider.addEventListener("input", () => sizeOutput.value = sizeSlider.value);
+
 // Clear the canvas and make it all white
 clearCanvas.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -218,3 +178,90 @@ colorPicker.addEventListener("change", () => {
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
+
+
+// SELECT COLOR LOGIC
+// Pick random background color
+var background_colors = ["#bedcff", "#ffc4c4", "#c9ffd8", "#fdbcff", "#bcf8ff" ];
+var background_bottom_colors = ["#1f3c61", "#611f1f", "#1f6129", "#5e1f61", "#1f5d61"];
+var ran = Math.floor(Math.random() * background_colors.length);
+
+document.getElementById("background-ID").style.backgroundColor = background_colors[ran];
+
+document.getElementById("background-bottom-ID-1").style.backgroundColor = background_bottom_colors[ran];
+document.getElementById("background-bottom-ID-2").style.backgroundColor = background_bottom_colors[ran];
+document.getElementById("background-bottom-ID-3").style.backgroundColor = background_bottom_colors[ran];
+
+// SWITCH SCREENS LOGIC
+// Switch between searching and drawing
+const checkbox = document.getElementById("switch-input");
+
+const drawingBackground = document.getElementById("drawing-background");
+const searchingBackground = document.getElementById("searching-background");
+const switchText = document.getElementById("switch-text");
+
+window.onload = setScreen = () => {
+    switchText.innerHTML = "search mode";
+    drawingBackground.style.display = "none";
+    searchingBackground.style.display = "flex"; 
+
+    drawingBackground.style.zIndex = 0; 
+    searchingBackground.style.zIndex = 1; 
+};
+
+checkbox.addEventListener("change", (event) => {
+  if (event.currentTarget.checked) {
+    drawingBackground.style.display = "flex";
+    drawingBackground.style.opacity = 1; 
+    searchingBackground.style.display = "none"; 
+
+    drawingBackground.style.zIndex = 0; 
+    searchingBackground.style.zIndex = 1; 
+
+    switchText.innerHTML = "draw mode";
+  } else {
+    drawingBackground.style.display = "none"; 
+    searchingBackground.style.display = "flex"; 
+
+    drawingBackground.style.zIndex = 0; 
+    searchingBackground.style.zIndex = 1; 
+
+    switchText.innerHTML = "search mode";
+  }
+});
+
+// CHANGE TIME LOGIC
+function displayime() {
+    var dateTime = new Date();
+    var hrs = dateTime.getHours();
+    var min = dateTime.getMinutes();
+    var sec = dateTime.getSeconds();
+    var session = document.getElementById("session");
+
+    if (hrs >= 12)
+    {
+        session.innerHTML = "PM";
+    }
+    else
+    {
+        session.innerHTML = "AM";
+    }
+
+    if (hrs > 12)
+    {
+        hrs = hrs - 12;
+    }
+
+    if (min < 10)
+    {
+        min = "0" + dateTime.getMinutes();
+    }
+
+    document.getElementById("hours").innerHTML = hrs;
+    document.getElementById("minutes").innerHTML = min;
+    document.getElementById("seconds").innerHTML = sec;
+}
+
+setInterval(displayime, 10);
+    
+

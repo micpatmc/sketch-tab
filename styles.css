@@ -8,6 +8,44 @@
     user-select: none; /* Standard syntax */
 }
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-500px);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-500px);
+        filter: blur(3px);
+    }
+
+    to {
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(500px);
+        filter: blur(3px);
+    }
+
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
 /* Background CSS */
 .background {
     display: flex;
@@ -29,6 +67,7 @@
     bottom: 3vw;
     left: 2vw;
     z-index: 5;
+    animation: slideLeft 1s;
 }
 
 .switch input { 
@@ -75,6 +114,17 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
+#switch-text {
+    position: relative;
+    text-align: center;
+    font-weight: 100;
+    bottom: 3.5vw;
+    font-size: 1vw;
+    pointer-events: none;
+    opacity: 0.5;
+    animation: slideLeft 1s;
+}
+
 /* SEARCHING CSS */
 .searching-background {
     display: flex;
@@ -85,14 +135,29 @@ input:checked + .slider:before {
     height: 100vh;
     width: 100vw;
     z-index: 0;
+    animation: slideDown 0.75s;
 }
 
+/* Digital clock CSS */
+.time-container {
+    position: absolute;
+    top: 150px;
+    animation: slideDown 1s;
+}
+
+.time-container span {
+    font-size: 100px;
+    opacity: 0.5;
+    text-shadow: 5px 5px 0vw rgb(0, 0, 0, 0.25);
+}
+
+/* Search bar CSS */
 .search-bar {
     display: flex;
     position: absolute;
     align-items: center;
-    top: 200px;
-    max-height: 90px;
+    top: 300px;
+    max-height: 70px;
     max-width: 700px;
     width: 100%;
     border-radius: 60px;
@@ -122,8 +187,8 @@ input:checked + .slider:before {
 .search-bar button {
     border: 0;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: #59629b;
     cursor: pointer;
 }
@@ -151,17 +216,13 @@ input:checked + .slider:before {
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
     z-index: 0;
     opacity: 0.8;
+    animation: slideUp 0.75s;
+    transition: opacity 0.3s ease-out;
 }
 
 .background-bottom-1:hover {
     opacity: 1;
-    transition: all 0.3s ease-in-out;
 }
-/* 
-.background-bottom-1:hover:after {
-    opacity: 0.8;
-    transition: all 0.3s ease-in-out;
-} */
 
 .background-bottom-2 {
     position: absolute;
@@ -174,11 +235,12 @@ input:checked + .slider:before {
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
     z-index: 0;
     opacity: 0.8;
+    animation: slideUp 1s;
+    transition: opacity 0.3s ease-out;
 }
 
 .background-bottom-2:hover {
     opacity: 1;
-    transition: all 0.3s ease-in-out;
 }
 
 .background-bottom-3 {
@@ -191,11 +253,12 @@ input:checked + .slider:before {
     box-shadow: 0.3vw 0.3vw 0px rgb(0, 0, 0, 0.25);
     z-index: 0;
     opacity: 0.8;
+    animation: slideUp 1.25s;
+    transition: opacity 0.3s ease-out;
 }
 
 .background-bottom-3:hover {
     opacity: 1;
-    transition: all 0.3s ease-in-out;
 }
 
 /* Canvas CSS */
@@ -208,6 +271,8 @@ input:checked + .slider:before {
     background-color: #fff;
     border-radius: 2vw;
     box-shadow: 0.8vw 0.8vw 0px rgb(0, 0, 0, 0.5);
+    animation: slideDown 0.75s;
+
 }
 /* Toolbar CSS */
 .toolbar {
@@ -228,6 +293,7 @@ input:checked + .slider:before {
     color: black;
     text-shadow: 0.1vw 0.1vw 0vw rgb(0, 0, 0, 0.25);
     opacity: .8;
+    pointer-events: none;
 }
 
 .toolbar p {
@@ -319,8 +385,31 @@ input:checked + .slider:before {
     position: absolute;
     left: 1vw;
     bottom: 5vw;
-
 }
+
+.fill-option {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    top: 7vw;
+    background-color: #000;
+}
+
+.fill-option h2 {
+    position: absolute;
+    left: 5vw;
+    bottom: -1.2vw;
+    font-size: 1.25vw;
+}
+
+#fill-color {
+    position: absolute;
+    left: 11vw;
+    width: 1vw;
+    height: 1vw;
+}
+
 
 /* Other CSS */
 .other {

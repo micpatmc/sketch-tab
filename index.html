@@ -10,13 +10,22 @@
   <body>
   
     <div class="background" id="background-ID">
-      <label class="switch" for="switch-input">
+      <label class="switch">
         <input type="checkbox" id="switch-input"/>
         <span class="slider"></span>
+        <h2 id="switch-text"></h2>
       </label>
 
       <!-- SEARCHING -->
       <div class="searching-background" id="searching-background">
+        <div class="time-container">
+          <span id="hours">00</span>
+          <span>:</span>
+          <span id="minutes">00</span>
+          <!-- <span>:</span> -->
+          <!-- <span id="seconds">00</span> -->
+          <span id="session">AM</span>
+        </div>
         <form action="https://www.google.com/search" method="get" class="search-bar">
           <input type="text" placeholder="search anything" name="q">
           <button type="submit"><img src="./images/search.png" alt=""></button>
@@ -39,7 +48,7 @@
                   <img class="button-image" src="./images/paintbrush-solid.png"></i>
               </button>
               <!-- Brush sizing -->
-              <input type="range" id="brush-slider" value="10" min="1" max="50" oninput="this.nextElementSibling.value = this.value">
+              <input type="range" id="brush-slider" value="10" min="1" max="50">
               <output id="size-output">10</output>
               <button class="option tool" id="fill-tool">
                 <img class="button-image" src="./images/fill-drip-solid.png"></i>
@@ -68,7 +77,6 @@
             <h1>shapes</h1>
             <div class="shapes">
               <p>fill color</p>
-              <input id="fill-color" type="checkbox">
               <button class="option tool" id="rectangle">
                 <img class="button-image" src="./images/rectangle.png"></i>
               </button>
@@ -81,6 +89,10 @@
               <button class="option tool" id="line">
                 <img class="button-image" src="./images/line.png"></i>
               </button>
+              <div class="fill-option">
+                <h2>fill color</h2>
+                <input id="fill-color" type="checkbox">
+              </div>
             </div>
           </div>  
           <div class="background-bottom-3" id="background-bottom-ID-3">
