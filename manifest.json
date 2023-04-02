@@ -1,9 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "My Extension",
-  "description": "Base Level Extension",
+  "name": "Tab Draw",
+  "description": "Replace new tab page with a personal space to draw and doodle however you desire.",
   "version": "1.0",
   "chrome_url_overrides" : {
     "newtab": "index.html"
+  },
+  "action": {
+    "default_icon": "./images/header.png"
   }
 }
