@@ -55,7 +55,7 @@
     height: 100vh;
     width: 100vw;
     z-index: 0;
-    background-size: auto;
+    background-size: cover;
 }
 
 /* File Selection CSS */
