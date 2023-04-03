@@ -197,7 +197,7 @@ input:checked + .slider:before {
     position: absolute;
     font-size: 1px;
     background-color: transparent;
-    border: 0.2px solid #fff; /* Green */
+    border: 2px solid #fff; /* Green */
     padding: 8px;
     /* box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5); */
     border-radius: 30%;
