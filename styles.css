@@ -86,8 +86,8 @@
     width: 60px;
     height: 34px;
     z-index: 1;
-    bottom: 3vw;
-    left: 2vw;
+    bottom: 30px;
+    left: 30px;
     z-index: 5;
     animation: slideLeft 1s;
     /* box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.2); */
@@ -149,8 +149,8 @@ input:checked + .slider:before {
     position: relative;
     text-align: center;
     font-weight: 100;
-    bottom: 72.5px;
-    font-size: 1vw;
+    bottom: 65px;
+    font-size: 15px;
     pointer-events: none;
     color: white;
     letter-spacing: 1px;
@@ -195,12 +195,12 @@ input:checked + .slider:before {
 
 .settings-button {
     position: absolute;
-    font-size: 0.4vw;
+    font-size: 1px;
     background-color: transparent;
-    border: 0.15vw solid #fff; /* Green */
-    padding: .5vw;
+    border: 0.2px solid #fff; /* Green */
+    padding: 8px;
     /* box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5); */
-    border-radius: 0.75vw;
+    border-radius: 30%;
     opacity: 0.8;
     transition: opacity 0.5s ease-out;
     z-index: 5;
@@ -216,8 +216,8 @@ input:checked + .slider:before {
 }
 
 .button-image-settings {
-    width: 1vw;
-    height: 1vw;
+    width: 20px;
+    height: 20px;
     color: white;
     filter: invert(100%);
 }
