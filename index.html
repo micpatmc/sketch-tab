@@ -13,20 +13,22 @@
     <div class="background" id="background-ID">
       <label class="switch">
         <input type="checkbox" id="switch-input"/>
-        <span class="slider"></span>
+        <span class="slider round"></span>
         <h2 id="switch-text"></h2>
       </label>
 
+      <div class="settings">
+        <button class="settings-button" id="brush">
+          <img class="button-image-settings" src="./images/gear.png"></i>
+        </button>
+      </div>
+
       <!-- SEARCHING -->
       <div class="searching-background" id="searching-background">
-        <label for="input-file">update image</label>
+        <label id="input-file-text" for="input-file">upload image</label>
         <input type="file" id="input-file" accept="image/jpeg, image/png, image/jpg">
         <div class="settings-container">
-          <div class="settings">
-            <button class="settings-button" id="brush">
-              <img class="button-image-settings" src="./images/gear.png"></i>
-            </button>
-          </div>
+          
         </div>
         <div class="time-container">
           <span id="hours">00</span>
@@ -101,7 +103,7 @@
                 <img class="button-image" src="./images/line.png"></i>
               </button>
               <div class="fill-option">
-                <h2>fill color</h2>
+                <h2>fill option</h2>
                 <input id="fill-color" type="checkbox">
               </div>
             </div>

@@ -61,7 +61,22 @@
 /* File Selection CSS */
 
 #input-file {
-    
+    display: none;
+}
+
+#input-file-text {
+    color: white;
+    position: absolute;
+    top: 380px;
+    font-size: 22.5px;
+    opacity: 0.8;
+    transition: opacity 0.5s ease-out;
+    letter-spacing: 1px;
+}
+
+#input-file-text:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 /* Switch CSS */
@@ -75,7 +90,7 @@
     left: 2vw;
     z-index: 5;
     animation: slideLeft 1s;
-    box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.2);
+    /* box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.2); */
 }
 
 .switch input { 
@@ -122,14 +137,23 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
 #switch-text {
     position: relative;
     text-align: center;
     font-weight: 100;
-    bottom: 3.5vw;
+    bottom: 72.5px;
     font-size: 1vw;
     pointer-events: none;
-    opacity: 0.5;
+    color: white;
+    letter-spacing: 1px;
     animation: slideLeft 1s;
 }
 
@@ -170,14 +194,16 @@ input:checked + .slider:before {
 }
 
 .settings-button {
+    position: absolute;
     font-size: 0.4vw;
-    background-color: white;
-    color: black;
-    border: 0.15vw solid #000000; /* Green */
+    background-color: transparent;
+    border: 0.15vw solid #fff; /* Green */
     padding: .5vw;
-    box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5);
+    /* box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5); */
     border-radius: 0.75vw;
     opacity: 0.8;
+    transition: opacity 0.5s ease-out;
+    z-index: 5;
 }
 
 .settings-button:hover {
@@ -186,13 +212,14 @@ input:checked + .slider:before {
 }
 
 .settings-button:active {
-    background-color: rgb(133, 133, 133);
+    background-color: rgb(133, 133, 133, 0.3);
 }
 
 .button-image-settings {
     width: 1vw;
     height: 1vw;
     color: white;
+    filter: invert(100%);
 }
 
 /* Digital clock CSS */
@@ -203,8 +230,8 @@ input:checked + .slider:before {
 }
 
 .time-container span {
-    font-size: 100px;
-    opacity: 0.5;
+    color: white;
+    font-size: 120px;
     text-shadow: 5px 5px 0vw rgb(0, 0, 0, 0.25);
 }
 
@@ -214,7 +241,7 @@ input:checked + .slider:before {
     position: absolute;
     align-items: center;
     top: 300px;
-    max-height: 70px;
+    max-height: 55px;
     max-width: 700px;
     width: 100%;
     border-radius: 60px;
@@ -230,11 +257,13 @@ input:checked + .slider:before {
     outline: none;
     padding: 24px 20px;
     font-size: 20px;
-    color: #cac7ff;    
+    color: #a0a0a0;
+    /* color: #cac7ff;     */
 }
 
 ::placeholder {
-    color: #cac7ff;
+    color: #a0a0a0;
+    /* color: #cac7ff;     */
 }
 
 .search-bar button img {
@@ -244,9 +273,10 @@ input:checked + .slider:before {
 .search-bar button {
     border: 0;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background: #59629b;
+    width: 45px;
+    height: 45px;
+    background: #3f3f3f;
+    /* background: #59629b; */
     cursor: pointer;
 }
 
@@ -347,9 +377,9 @@ input:checked + .slider:before {
     bottom: 2.5vw;
     font-size: 1.5vw;
     letter-spacing: .5vw;
-    color: black;
+    color: white;
     text-shadow: 0.1vw 0.1vw 0vw rgb(0, 0, 0, 0.25);
-    opacity: .8;
+    opacity: .9;
     pointer-events: none;
 }
 
@@ -388,7 +418,7 @@ input:checked + .slider:before {
 }
 
 .option:active {
-    background-color: rgb(133, 133, 133);
+    background-color: rgb(197, 197, 197);
 }
 
 .button-image {
@@ -454,10 +484,12 @@ input:checked + .slider:before {
 }
 
 .fill-option h2 {
+    color: white;
     position: absolute;
-    left: 5vw;
+    left: 3.5vw;
     bottom: -1.2vw;
     font-size: 1.25vw;
+    letter-spacing: 2px;
 }
 
 #fill-color {
@@ -502,7 +534,7 @@ input:checked + .slider:before {
 }
 
 .colors .option:hover:active {
-    background-color: rgb(133, 133, 133);
+    background-color: rgb(197, 197, 197);
 }
 
 .colors .option:nth-child(1) {

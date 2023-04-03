@@ -288,5 +288,9 @@ document.addEventListener("DOMContentLoaded", () => {
     {
         profilePic.style.backgroundImage = "url(" + recentImageDataUrl + ")";
     }
+    else
+    {
+        profilePic.style.backgroundImage = "url(./images/background-2.jpg)";
+    }
 });
 
