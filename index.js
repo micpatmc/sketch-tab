@@ -252,6 +252,9 @@ function displayime() {
         hrs = hrs - 12;
     }
 
+    if (hrs == 0)
+        hrs = 12;
+
     if (min < 10)
     {
         min = "0" + dateTime.getMinutes();
