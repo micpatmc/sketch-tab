@@ -86,8 +86,8 @@
     width: 60px;
     height: 34px;
     z-index: 1;
-    bottom: 30px;
-    left: 30px;
+    bottom: 40px;
+    left: 40px;
     z-index: 5;
     animation: slideLeft 1s;
     /* box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.2); */
@@ -149,8 +149,8 @@ input:checked + .slider:before {
     position: relative;
     text-align: center;
     font-weight: 100;
-    bottom: 65px;
-    font-size: 15px;
+    bottom: 67.5px;
+    font-size: 17.5px;
     pointer-events: none;
     color: white;
     letter-spacing: 1px;
