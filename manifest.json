@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Tab Draw",
-  "description": "Replace new tab page with a personal space to draw and doodle however you desire.",
+  "name": "Sketch",
+  "description": "Replace new tab page with a personal space where you can search and doodle however you desire.",
   "version": "1.0",
   "chrome_url_overrides" : {
     "newtab": "index.html"

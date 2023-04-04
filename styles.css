@@ -183,6 +183,7 @@ input:checked + .slider:before {
 }
 
 .settings {
+    display: none;
     position: absolute;
     left: 20px;
     top: 20px;
