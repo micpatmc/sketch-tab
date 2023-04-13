@@ -180,30 +180,86 @@ input:checked + .slider:before {
 }
 
 /* Settings Menu CSS */
-
 .settings-menu {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgb(0, 0, 0, 0);
     width: 200px;
     height: 550px;
 }
 
 .colors-section {
-    position: absolute;
-    top: 80px;
+    margin-top: 100px;
     width: 100%;
-    height: 100px;
+    height: 170px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.colors-section h1 {
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 5px 5px 0vw rgb(0, 0, 0, 0.25);
+}
+
+.colors-section .option {
+    background-color: white;
+    color: black;
+    border: 2px solid #000000; /* Green */
+    padding: .6vw;
+    box-shadow: 0.4vw 0.4vw 0px rgb(0, 0, 0, 0.5);
+    border-radius: 0vw;
+    opacity: 0.8;
+    z-index: 1000;
+}
+
+.colors-section .option:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.colors-section .option:active {
+    background-color: rgb(197, 197, 197);
+}
+
+.colors-section .option:nth-child(2) {
+    background-color: #fff;
+    color: #fff;
+}
+
+.colors-section .option:nth-child(3) {
+    background-color: #000;
+    color: #000;
+}
+
+.colors-section .option:nth-child(4) {
+    background-color: #E02020;
+    color: #E02020;
+}
+
+.colors-section .option:nth-child(5) {
+    background-color: #6DD400;
+    color: #6DD400;
+}
+
+.colors-section .option:nth-child(6) {
+    background-color: #4A98F7;
+    color: #4A98F7;
+}
+
+.colors-section .option:nth-child(7) {
     background-color: #fff;
 }
 
 .backgrounds-section {
-    position: absolute;
-    top: 160px;
     width: 100%;
-    height: 100px;
-    background-color: #fff;
+    height: 280px;
+    background-color: rgb(0, 255, 0, 0.2);
 }
 
 /* Settings CSS */
@@ -234,7 +290,7 @@ input:checked + .slider:before {
     position: absolute;
     font-size: 1px;
     background-color: transparent;
-    border: 2px solid #fff; /* Green */
+    border: 2px solid #fff;
     padding: 8px;
     /* box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5); */
     border-radius: 30%;

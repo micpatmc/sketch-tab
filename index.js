@@ -296,3 +296,78 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// CHANGE TEXT STYLE
+
+settings_ColorBtns = document.querySelectorAll(".colors-section .option");
+
+settings_hours = document.getElementById("hours");
+settings_minutes = document.getElementById("minutes");
+settings_separation = document.getElementById("time-separation");
+settings_session = document.getElementById("session");
+settings_upload = document.getElementById("input-file-text");
+settings_switchText = document.getElementById("switch-text");
+settings_textColor = document.getElementById("text-color");
+
+settings_toolbar = document.getElementById("toolbar-text");
+settings_shapes = document.getElementById("shapes-text");
+settings_other = document.getElementById("other-text");
+
+settings_colorpicker = document.getElementById("settings-color-picker");
+
+
+// Determine which color is active
+settings_ColorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        var element = document.querySelector(".options .selected")
+        
+        if (element !== null)
+        {
+            element.classList.remove("selected");
+        }
+
+        btn.classList.add("selected");
+        settings_hours.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_minutes.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_separation.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_session.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_upload.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_switchText.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_textColor.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_toolbar.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_shapes.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        settings_other.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+
+        localStorage.setItem("text-color", window.getComputedStyle(btn).getPropertyValue("color"));
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const recentTextColor = localStorage.getItem("text-color");
+
+    settings_hours.style.color = recentTextColor;
+    settings_minutes.style.color = recentTextColor;
+    settings_separation.style.color = recentTextColor;
+    settings_session.style.color = recentTextColor;
+    settings_upload.style.color = recentTextColor;
+    settings_switchText.style.color = recentTextColor;
+    settings_textColor.style.color = recentTextColor;
+    settings_toolbar.style.color = recentTextColor;
+    settings_shapes.style.color = recentTextColor;
+    settings_other.style.color = recentTextColor;
+});
+
+settings_colorpicker.addEventListener("change", () => {
+    settings_colorpicker.style.backgroundColor = settings_colorpicker.value;
+    settings_colorpicker.style.color = settings_colorpicker.value;
+    
+    settings_hours.style.color = settings_colorpicker.value;
+    settings_minutes.style.color = settings_colorpicker.value;
+    settings_separation.style.color = settings_colorpicker.value;
+    settings_session.style.color = settings_colorpicker.value;
+    settings_upload.style.color = settings_colorpicker.value;
+    settings_switchText.style.color = settings_colorpicker.value;
+    settings_textColor.style.color = settings_colorpicker.value;
+    settings_toolbar.style.color = settings_colorpicker.value;
+    settings_shapes.style.color = settings_colorpicker.value;
+    settings_other.style.color = settings_colorpicker.value;
+});

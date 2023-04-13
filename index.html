@@ -24,11 +24,24 @@
       </div>
 
       <div class="settings-menu">
-        <div class="colors-section">
-          wdw
-        </div>
-        <div class="backgrounds-section">
-          wdw
+        <div class="settings-menu-container">
+          <div class="colors-section">
+            <h1 id="text-color">text color</h1>
+              <button class="option">
+              </button>
+              <button class="option selected">
+              </button>
+              <button class="option">
+              </button>
+              <button class="option">
+              </button>
+              <button class="option">
+              </button>
+              <input class="option" id="settings-color-picker" type="color">
+          </div>
+          <div class="backgrounds-section">
+            wdw
+          </div>
         </div>
       </div>
 
@@ -38,7 +51,7 @@
         <input type="file" id="input-file" accept="image/jpeg, image/png, image/jpg, image/webp, image/jfif">
         <div class="time-container">
           <span id="hours">00</span>
-          <span>:</span>
+          <span id="time-separation">:</span>
           <span id="minutes">00</span>
           <!-- <span>:</span> -->
           <!-- <span id="seconds">00</span> -->
@@ -61,7 +74,7 @@
         <div class="toolbar" id="toolbar">
           <div class="background-bottom-1" id="background-bottom-ID-1">
             <!-- Tools -->
-            <h1>toolbar</h1>
+            <h1 id="toolbar-text">toolbar</h1>
             <div class="tools">
               <button class="option active tool" id="brush">
                   <img class="button-image" src="./images/paintbrush-solid.png"></i>
@@ -93,7 +106,7 @@
             </div> 
           <div class="background-bottom-2" id="background-bottom-ID-2">
             <!-- Shapes -->
-            <h1>shapes</h1>
+            <h1 id="shapes-text">shapes</h1>
             <div class="shapes">
               <p>fill mode</p>
               <button class="option tool" id="rectangle">
@@ -116,7 +129,7 @@
           </div>  
           <div class="background-bottom-3" id="background-bottom-ID-3">
             <!-- Other -->
-            <h1>other</h1>
+            <h1 id="other-text">other</h1>
             <div class="other">
               <button class="option tool" id="clear-canvas">
                 <img class="button-image" src="./images/trash-can-solid.png"></i>
