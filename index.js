@@ -331,11 +331,11 @@ settings_ColorBtns.forEach(btn => {
         settings_session.style.color = window.getComputedStyle(btn).getPropertyValue("color");
         settings_upload.style.color = window.getComputedStyle(btn).getPropertyValue("color");
         settings_switchText.style.color = window.getComputedStyle(btn).getPropertyValue("color");
-        settings_textColor.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        // settings_textColor.style.color = window.getComputedStyle(btn).getPropertyValue("color");
         settings_toolbar.style.color = window.getComputedStyle(btn).getPropertyValue("color");
         settings_shapes.style.color = window.getComputedStyle(btn).getPropertyValue("color");
         settings_other.style.color = window.getComputedStyle(btn).getPropertyValue("color");
-        settings_textBackground.style.color = window.getComputedStyle(btn).getPropertyValue("color");
+        // settings_textBackground.style.color = window.getComputedStyle(btn).getPropertyValue("color");
 
         localStorage.setItem("text-color", window.getComputedStyle(btn).getPropertyValue("color"));
     });
@@ -350,11 +350,11 @@ document.addEventListener("DOMContentLoaded", () => {
     settings_session.style.color = recentTextColor;
     settings_upload.style.color = recentTextColor;
     settings_switchText.style.color = recentTextColor;
-    settings_textColor.style.color = recentTextColor;
+    // settings_textColor.style.color = recentTextColor;
     settings_toolbar.style.color = recentTextColor;
     settings_shapes.style.color = recentTextColor;
     settings_other.style.color = recentTextColor;
-    settings_textBackground.style.color = recentTextColor;
+    // settings_textBackground.style.color = recentTextColor;
 });
 
 settings_colorpicker.addEventListener("change", () => {
@@ -367,9 +367,9 @@ settings_colorpicker.addEventListener("change", () => {
     settings_session.style.color = settings_colorpicker.value;
     settings_upload.style.color = settings_colorpicker.value;
     settings_switchText.style.color = settings_colorpicker.value;
-    settings_textColor.style.color = settings_colorpicker.value;
+    // settings_textColor.style.color = settings_colorpicker.value;
     settings_toolbar.style.color = settings_colorpicker.value;
     settings_shapes.style.color = settings_colorpicker.value;
     settings_other.style.color = settings_colorpicker.value;
-    settings_textBackground.style.color = settings_colorpicker.value;
+    // settings_textBackground.style.color = settings_colorpicker.value;
 });
