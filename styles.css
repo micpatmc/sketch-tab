@@ -280,6 +280,15 @@ input:checked + .slider:before {
 }
 
 .colors-section .option:nth-child(7) {
+    background-color: white;
+    color: black;
+    width: 72.5%;
+    border: 2px solid #000000; /* Green */
+    padding: 10%;
+    box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.5);
+    border-radius: 10%;
+    opacity: 0.8;
+    z-index: 1000;
     background-color: #fff;
 }
 
@@ -328,13 +337,19 @@ input:checked + .slider:before {
 }
 
 #settings-next {
-    margin-top: 20%;
-    width: 60%;
+    width: 50%;
     font-size: 20px;
     border-radius: 20px;
-    color: white;
-    background-color: black;
+    margin: 4%;
     border: none;
+}
+
+#settings-next:hover {
+    cursor: pointer;
+}
+
+.settings-navigation {
+    display: flex;
 }
 
 /* Settings CSS */
