@@ -23,26 +23,23 @@
         </button>
       </div>
 
-      <!-- Add arrows for navigation -->
-      <!-- Fix the button not being in the middle -->
-      <!-- Work on switching different menu options -->
       <div class="settings-menu">
         <div class="settings-menu-container">
           <div class="colors-section">
             <h1 id="text-color">text color</h1>
-              <button class="option">
-              </button>
-              <button class="option selected">
-              </button>
-              <button class="option">
-              </button>
-              <button class="option">
-              </button>
-              <button class="option">
-              </button>
-              <input class="option" id="settings-color-picker" type="color">
+            <button class="option">
+            </button>
+            <button class="option selected">
+            </button>
+            <button class="option">
+            </button>
+            <button class="option">
+            </button>
+            <button class="option">
+            </button>
+            <input class="option" id="settings-color-picker" type="color">
           </div>
-          <!-- <div class="backgrounds-section">
+          <div class="backgrounds-section">
             <h1 id="text-background">previous backgrounds</h1>
             <button id="saved-background-1">
               <img class="saved-background-img" src="./images/background-1.jpg">
@@ -53,10 +50,10 @@
             <button>
               <img class="saved-background-img" src="./images/background-1.jpg">
             </button>
-          </div> -->
+          </div>
           <div class="settings-navigation">
-            <button id="settings-next">Left</button>
-            <button id="settings-next">Right</button>
+            <button id="settings-next" onclick="toggleButtonDecrease()">Left</button>
+            <button id="settings-next" onclick="toggleButtonIncrease()">Right</button>
           </div>
         </div>
       </div>

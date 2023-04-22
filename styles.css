@@ -191,167 +191,6 @@ input:checked + .slider:before {
     animation: slideDown 0.75s;
 }
 
-/* Settings Menu CSS */
-.settings-menu {
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    left: -200px;
-    top: 0;
-    width: 10%;
-    height: 75%;
-    transition: left 0.5s ease-out;
-    background-color: rgb(0, 0, 0, 0.15);
-    border-radius: 0px 10px 10px 0px;
-    z-index: 5;
-}
-
-.settings-menu-container {
-    justify-content: center;
-    align-items: center;
-}
-
-.settings-menu:hover {
-    left: 0;
-}
-
-.colors-section {
-    display: grid;
-    margin-top: 50%;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    /* background-color: rgb(0, 0, 0, 0.3); */
-}
-
-.colors-section h1 {
-    color: white;
-    padding-top: 10%;
-    text-align: center;
-    font-size: 120%;
-    letter-spacing: 3px;
-    /* text-shadow: 2px 2px 0vw rgb(0, 0, 0, 0.25); */
-}
-
-.colors-section .option {
-    background-color: white;
-    color: black;
-    border: 2px solid #000000; /* Green */
-    padding: 10%;
-    box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.5);
-    border-radius: 10%;
-    opacity: 0.8;
-    z-index: 1000;
-}
-
-.colors-section .option:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.colors-section .option:active {
-    background-color: rgb(197, 197, 197);
-}
-
-.colors-section .option:nth-child(2) {
-    background-color: #fff;
-    color: #fff;
-}
-
-.colors-section .option:nth-child(3) {
-    background-color: #000;
-    color: #000;
-}
-
-.colors-section .option:nth-child(4) {
-    background-color: #E02020;
-    color: #E02020;
-}
-
-.colors-section .option:nth-child(5) {
-    background-color: #6DD400;
-    color: #6DD400;
-}
-
-.colors-section .option:nth-child(6) {
-    background-color: #4A98F7;
-    color: #4A98F7;
-}
-
-.colors-section .option:nth-child(7) {
-    background-color: white;
-    color: black;
-    width: 72.5%;
-    border: 2px solid #000000; /* Green */
-    padding: 10%;
-    box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.5);
-    border-radius: 10%;
-    opacity: 0.8;
-    z-index: 1000;
-    background-color: #fff;
-}
-
-.backgrounds-section {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 60%;
-    /* background-color: rgb(0, 255, 0, 0.2); */
-    justify-content: center;
-    align-items: center;
-}
-
-.backgrounds-section h1 {
-    position: absolute;
-    top: 0;
-    color: white;
-    padding-top: 10px;
-    text-align: center;
-    font-size: 100%;
-    letter-spacing: 3px;
-    /* text-shadow: 2px 2px 0vw rgb(0, 0, 0, 0.25); */
-}
-
-.backgrounds-section button {
-    position: relative;
-    width: 70%;
-    height: 15%;
-    border-radius: 20px;
-    margin: 12.5%;
-    color: white;
-    background-color: transparent;
-    background: none;
-    border: none;
-}
-
-.backgrounds-section img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-}
-
-.backgrounds-section button:hover {
-    cursor: pointer;
-}
-
-#settings-next {
-    width: 50%;
-    font-size: 20px;
-    border-radius: 20px;
-    margin: 4%;
-    border: none;
-}
-
-#settings-next:hover {
-    cursor: pointer;
-}
-
-.settings-navigation {
-    display: flex;
-}
-
 /* Settings CSS */
 .settings-container {
     position: absolute;
@@ -411,6 +250,172 @@ input:checked + .slider:before {
     height: 20px;
     color: white;
     filter: invert(100%);
+}
+
+/* Settings Menu CSS */
+.settings-menu {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    /* left: -200px; */
+    left: 0px;
+    top: 0;
+    width: 10%;
+    height: 75%;
+    transition: left 0.5s ease-out;
+    background-color: rgb(0, 0, 0, 0.15);
+    border-radius: 0px 10px 10px 0px;
+    z-index: 5;
+}
+
+.settings-menu-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-menu:hover {
+    left: 0;
+}
+
+.colors-section {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgb(0, 0, 0, 0.3); */
+}
+
+.colors-section h1 {
+    color: white;
+    text-align: center;
+    font-size: 1.25vw;
+    letter-spacing: 3px;
+    /* text-shadow: 2px 2px 0vw rgb(0, 0, 0, 0.25); */
+}
+
+.colors-section .option {
+    background-color: white;
+    color: black;
+    border: 2px solid #000000; /* Green */
+    padding: 10%;
+    box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.5);
+    border-radius: 10%;
+    opacity: 0.8;
+    z-index: 1000;
+    width: 50%;
+    margin: 10%;
+}
+
+.colors-section .option:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.colors-section .option:active {
+    background-color: rgb(197, 197, 197);
+}
+
+.colors-section .option:nth-child(2) {
+    background-color: #fff;
+    color: #fff;
+}
+
+.colors-section .option:nth-child(3) {
+    background-color: #000;
+    color: #000;
+}
+
+.colors-section .option:nth-child(4) {
+    background-color: #E02020;
+    color: #E02020;
+}
+
+.colors-section .option:nth-child(5) {
+    background-color: #6DD400;
+    color: #6DD400;
+}
+
+.colors-section .option:nth-child(6) {
+    background-color: #4A98F7;
+    color: #4A98F7;
+}
+
+.colors-section .option:nth-child(7) {
+    background-color: white;
+}
+
+.backgrounds-section {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(0, 255, 0, 0.2); */
+    justify-content: center;
+    align-items: center;
+}
+
+.backgrounds-section h1 {
+    color: white;
+    text-align: center;
+    font-size: 1.1vw;
+    letter-spacing: 3px;
+    /* text-shadow: 2px 2px 0vw rgb(0, 0, 0, 0.25); */
+}
+
+.backgrounds-section button {
+    position: relative;
+    width: 80%;
+    height: 12.5%;
+    border-radius: 20px;
+    margin: 20%;
+    color: white;
+    background-color: transparent;
+    background: none;
+    border: none;
+}
+
+.backgrounds-section img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.backgrounds-section button:hover {
+    cursor: pointer;
+}
+
+/* Settings Arrows CSS */
+.settings-navigation {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    height: 10%;
+    width: 100%;
+    align-items: end;
+}
+
+#settings-next {
+    top: 2vw;
+    width: 50%;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 4%;
+    margin-bottom: 10%;
+    border: none;
+    opacity: 0.5;
+}
+
+#settings-next:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#settings-next:hover:active {
+    background-color: rgb(197, 197, 197);
 }
 
 /* Digital clock CSS */
