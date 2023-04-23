@@ -380,6 +380,11 @@ var counter = 1;
 
 var colorsSection = document.querySelector(".colors-section");
 var backgroundsSection = document.querySelector(".backgrounds-section");
+var leftButton = document.querySelector(".settings-next-left");
+var rightButton = document.querySelector(".settings-next-right");
+
+rightButton.addEventListener("click", toggleButtonIncrease);
+leftButton.addEventListener("click", toggleButtonDecrease);
 
 function toggleButtonIncrease() {
 
