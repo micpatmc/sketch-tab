@@ -261,7 +261,7 @@ input:checked + .slider:before {
     left: 0px;
     top: 0;
     width: 10%;
-    height: 75%;
+    height: 80%;
     transition: left 0.5s ease-out;
     background-color: rgb(0, 0, 0, 0.15);
     border-radius: 0px 10px 10px 0px;
@@ -307,14 +307,16 @@ input:checked + .slider:before {
     z-index: 1000;
     width: 50%;
     margin: 10%;
+    transition: 0.3s ease-out;
 }
 
 .colors-section .option:hover {
     opacity: 1;
     cursor: pointer;
+    width: 55%;
 }
 
-.colors-section .option:active {
+.colors-section .option:hover:active {
     background-color: rgb(197, 197, 197);
 }
 
@@ -376,6 +378,17 @@ input:checked + .slider:before {
     background-color: transparent;
     background: none;
     border: none;
+    transition: 0.3s ease-out;
+    background-color: #000;
+}
+
+.backgrounds-section button:hover {
+    width: 90%;
+    height: 14%;
+}
+
+.backgrounds-section button:hover:active {
+    border: 4px solid #ffffff;
 }
 
 .backgrounds-section img {
@@ -398,6 +411,11 @@ input:checked + .slider:before {
     align-items: end;
 }
 
+.settings-navigation img {
+    width: 40%;
+    height: 50%;
+}
+
 #settings-next {
     top: 2vw;
     width: 50%;
@@ -407,6 +425,7 @@ input:checked + .slider:before {
     margin-bottom: 10%;
     border: none;
     opacity: 0.5;
+    transition: 0.3s ease-out;
 }
 
 #settings-next:hover {

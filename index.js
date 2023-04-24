@@ -1,4 +1,4 @@
-// DRAWING LOGIC
+// #region Drawing logic
 // References
 const canvas = document.getElementById("drawing-board");
 toolBtns = document.querySelectorAll(".tool");
@@ -179,8 +179,9 @@ canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
 
-// SELECT COLOR LOGIC
-// Pick random background color
+// #endregion
+
+// #region Pick random background color
 var background_colors = ["#bedcff", "#ffc4c4", "#c9ffd8", "#fdbcff", "#bcf8ff" ];
 var background_bottom_colors = ["#1f3c61", "#611f1f", "#1f6129", "#5e1f61", "#1f5d61"];
 var ran = Math.floor(Math.random() * background_colors.length);
@@ -191,8 +192,9 @@ document.getElementById("background-bottom-ID-1").style.backgroundColor = backgr
 document.getElementById("background-bottom-ID-2").style.backgroundColor = background_bottom_colors[ran];
 document.getElementById("background-bottom-ID-3").style.backgroundColor = background_bottom_colors[ran];
 
-// SWITCH SCREENS LOGIC
-// Switch between searching and drawing
+// #endregion
+
+// #region Switch between searching and drawing
 const checkbox = document.getElementById("switch-input");
 
 const drawingBackground = document.getElementById("drawing-background");
@@ -229,7 +231,9 @@ checkbox.addEventListener("change", (event) => {
   }
 });
 
-// CHANGE TIME LOGIC
+// #endregion
+
+// #region Change time logic
 function displayime() {
     var dateTime = new Date();
     var hrs = dateTime.getHours();
@@ -265,12 +269,20 @@ function displayime() {
 }
 
 setInterval(displayime, 10);
+
+// #endregion
     
-// CHANGE BACKGROUND PHOTO
-let profilePic = document.getElementById("background-ID");
+// #region Change background photo
+let backgroundPic = document.getElementById("background-ID");
 let inputFile = document.getElementById("input-file");
 
 let bgButton1 = document.getElementById("saved-background-1");
+
+var savedBG1 = document.getElementById("saved-background-img-1");
+var savedBG2 = document.getElementById("saved-background-img-2");
+var savedBG3 = document.getElementById("saved-background-img-3");
+
+var savedCounter = 1;
 
 inputFile.onchange = function() {
 
@@ -281,23 +293,67 @@ inputFile.onchange = function() {
     });
 
     reader.readAsDataURL(this.files[0]);
-    profilePic.style.backgroundImage = "url(" + URL.createObjectURL(inputFile.files[0]) + ")";
+    backgroundPic.style.backgroundImage = "url(" + URL.createObjectURL(inputFile.files[0]) + ")";
+
+    savedBG1.src = savedBG2.src;
+    savedBG2.src = savedBG3.src;
+    savedBG3.src = URL.createObjectURL(inputFile.files[0]);
+
+    localStorage.setItem("saved-image-1", savedBG1.src);
+    localStorage.setItem("saved-image-2", savedBG2.src);
+    localStorage.setItem("saved-image-3", savedBG3.src);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const recentImageDataUrl = localStorage.getItem("recent-image");
+    const savedBG1Data = localStorage.getItem("saved-image-1");
+    const savedBG2Data = localStorage.getItem("saved-image-2");
+    const savedBG3Data = localStorage.getItem("saved-image-3");
 
     if (recentImageDataUrl)
     {
-        profilePic.style.backgroundImage = "url(" + recentImageDataUrl + ")";
+        backgroundPic.style.backgroundImage = "url(" + recentImageDataUrl + ")";
     }
     else
     {
-        profilePic.style.backgroundImage = "url(./images/background-2.jpg)";
+        backgroundPic.style.backgroundImage = "url(./images/background-2.jpg)";
     }
+
+    if (savedBG1Data)
+        savedBG1.src = localStorage.getItem("saved-image-1");
+    
+    if (savedBG2Data)
+        savedBG2.src = localStorage.getItem("saved-image-2");
+    
+    if (savedBG3Data)
+        savedBG3.src = localStorage.getItem("saved-image-3");
 });
 
-// CHANGE TEXT COLOR
+// #endregion
+
+// #region Save previous backgrounds
+savedBG1.addEventListener("click", changeBackground1);
+savedBG2.addEventListener("click", changeBackground2);
+savedBG3.addEventListener("click", changeBackground3);
+
+function changeBackground1() {
+    backgroundPic.style.backgroundImage = "url(" + savedBG1.src + ")";
+    localStorage.setItem("recent-image", savedBG1.src);
+}
+
+function changeBackground2() {
+    backgroundPic.style.backgroundImage = "url(" + savedBG2.src + ")";
+    localStorage.setItem("recent-image", savedBG2.src);
+}
+
+function changeBackground3() {
+    backgroundPic.style.backgroundImage = "url(" + savedBG3.src + ")";
+    localStorage.setItem("recent-image", savedBG3.src);
+}
+
+// #endregion
+
+// #region Change text color
 settings_ColorBtns = document.querySelectorAll(".colors-section .option");
 
 settings_hours = document.getElementById("hours");
@@ -374,8 +430,9 @@ settings_colorpicker.addEventListener("change", () => {
     // settings_textBackground.style.color = settings_colorpicker.value;
 });
 
-// TOGGLE BUTTONS
+// #endregion
 
+// #region Toggle settings menu
 var counter = 1;
 
 var colorsSection = document.querySelector(".colors-section");
@@ -423,3 +480,5 @@ function toggleButtonDecrease() {
         backgroundsSection.style.display = "flex";
     }
 }
+
+// #endregion
