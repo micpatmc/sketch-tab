@@ -289,10 +289,12 @@ input:checked + .slider:before {
 }
 
 .colors-section h1 {
+    position: relative;
     color: white;
     text-align: center;
     font-size: 1.25vw;
     letter-spacing: 3px;
+    margin-top: 15%;
     /* text-shadow: 2px 2px 0vw rgb(0, 0, 0, 0.25); */
 }
 
@@ -365,6 +367,7 @@ input:checked + .slider:before {
     text-align: center;
     font-size: 1.1vw;
     letter-spacing: 3px;
+    margin-top: 15%;
     /* text-shadow: 2px 2px 0vw rgb(0, 0, 0, 0.25); */
 }
 
