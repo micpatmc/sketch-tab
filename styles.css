@@ -8,6 +8,7 @@
     user-select: none; /* Standard syntax */
 }
 
+/* Animations CSS */
 @keyframes slideDown {
     from {
         opacity: 0;
