@@ -8,6 +8,8 @@ Be able to doodle straight from your new tab with Sketch Tab.
 • Save your doodles with the click of a button<br>
 • The ability to search from any new tab<br>
 • Set your new tab background to any image you desire<br>
+• Upload image related functionality<br>
+• Change UI text color<br>
 
 This extension gives you the opportunity to quickly use a whiteboard and draw immediately from your new page tab, 
 draw mode is equipped with a variety of tools to use with ease. Another amazing feature is the ability to change your background,
