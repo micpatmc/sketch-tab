@@ -111,7 +111,6 @@
     left: 40px;
     z-index: 5;
     animation: slideLeft 1s;
-    /* box-shadow: 4px 4px 0px rgb(0, 0, 0, 0.2); */
 }
 
 .switch input { 
@@ -226,7 +225,6 @@ input:checked + .slider:before {
     background-color: transparent;
     border: 2px solid #fff;
     padding: 8px;
-    /* box-shadow: 0.2vw 0.2vw 0px rgb(0, 0, 0, 0.5); */
     border-radius: 30%;
     opacity: 0.8;
     transition: opacity 0.5s ease-out;
@@ -569,8 +567,8 @@ input:checked + .slider:before {
     border-radius: 2vw;
     box-shadow: 0.8vw 0.8vw 0px rgb(0, 0, 0, 0.5);
     animation: slideDown 0.75s;
-
 }
+
 /* Toolbar CSS */
 .toolbar {
     position: absolute;
@@ -707,7 +705,6 @@ input:checked + .slider:before {
     width: 1vw;
     height: 1vw;
 }
-
 
 /* Other CSS */
 .other {
