@@ -15,4 +15,8 @@ This extension gives you the opportunity to quickly use a whiteboard and draw im
 draw mode is equipped with a variety of tools to use with ease. Another amazing feature is the ability to change your background,
 which then saves the background for the next time you load up a new tab.
 
-Link: https://chrome.google.com/webstore/detail/sketch-tab/pnkngfebkbjcehlgoflnfbflnbfkgibl
+[Available in the Chrome Web Store](https://chrome.google.com/webstore/detail/sketch-tab/pnkngfebkbjcehlgoflnfbflnbfkgibl)
+
+![Sketch Tab Screenshot Main](https://i.imgur.com/AHFO7E8.png)
+![Sketch Tab Screenshot 1](https://i.imgur.com/drCLTgK.png)
+![Sketch Tab Screenshot 2](https://i.imgur.com/tKf5UHq.png)
