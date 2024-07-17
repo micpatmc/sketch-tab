@@ -367,6 +367,7 @@ settings_upload = document.getElementById("input-file-text");
 settings_switchText = document.getElementById("switch-text");
 settings_textColor = document.getElementById("text-color");
 settings_textBackground = document.getElementById("text-background");
+settings_textTime = document.getElementById("text-time");
 
 // settings_toolbar = document.getElementById("toolbar-text");
 // settings_shapes = document.getElementById("shapes-text");
@@ -454,6 +455,7 @@ var counter = 1;
 
 var colorsSection = document.querySelector(".colors-section");
 var backgroundsSection = document.querySelector(".backgrounds-section");
+var timeSection = document.querySelector(".time-section");
 var leftButton = document.querySelector(".settings-next-left");
 var rightButton = document.querySelector(".settings-next-right");
 
@@ -463,28 +465,40 @@ leftButton.addEventListener("click", toggleButtonDecrease);
 function toggleButtonIncrease() {
   counter++;
 
-  if (counter > 2) counter = 1;
+  if (counter > 3) counter = 1;
 
   if (counter == 1) {
     colorsSection.style.display = "flex";
     backgroundsSection.style.display = "none";
+    timeSection.style.display = "none";
   } else if (counter == 2) {
     colorsSection.style.display = "none";
     backgroundsSection.style.display = "flex";
+    timeSection.style.display = "none";
+  } else if (counter == 3) {
+    colorsSection.style.display = "none";
+    backgroundsSection.style.display = "none";
+    timeSection.style.display = "flex";
   }
 }
 
 function toggleButtonDecrease() {
   counter--;
 
-  if (counter < 1) counter = 2;
+  if (counter < 1) counter = 3;
 
   if (counter == 1) {
     colorsSection.style.display = "flex";
     backgroundsSection.style.display = "none";
+    timeSection.style.display = "none";
   } else if (counter == 2) {
     colorsSection.style.display = "none";
     backgroundsSection.style.display = "flex";
+    timeSection.style.display = "none";
+  } else if (counter == 3) {
+    colorsSection.style.display = "none";
+    backgroundsSection.style.display = "none";
+    timeSection.style.display = "flex";
   }
 }
 

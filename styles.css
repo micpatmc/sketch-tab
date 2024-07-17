@@ -397,6 +397,24 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.time-section {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-section h1 {
+  color: white;
+  text-align: center;
+  font-size: 1.1vw;
+  letter-spacing: 3px;
+  margin-top: 15%;
+}
+
 /* Settings Arrows CSS */
 .settings-navigation {
   position: absolute;
