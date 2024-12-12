@@ -266,6 +266,12 @@ input:checked + .slider:before {
 }
 
 .settings-menu-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
+  top: 10%;
   justify-content: center;
   align-items: center;
 }
@@ -275,7 +281,7 @@ input:checked + .slider:before {
 }
 
 .colors-section {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -346,73 +352,64 @@ input:checked + .slider:before {
   background-color: white;
 }
 
-.backgrounds-section {
-  position: absolute;
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.backgrounds-section h1 {
-  color: white;
-  text-align: center;
-  font-size: 1.1vw;
-  letter-spacing: 3px;
-  margin-top: 15%;
-}
-
-.backgrounds-section button {
-  position: relative;
-  width: 80%;
-  height: 12.5%;
-  border-radius: 20px;
-  margin: 20%;
-  color: white;
-  background-color: transparent;
-  background: none;
-  border: none;
-  transition: 0.3s ease-out;
-  background-color: #000;
-}
-
-.backgrounds-section button:hover {
-  width: 82.5%;
-  height: 13%;
-}
-
-.backgrounds-section button:hover:active {
-  border: 4px solid #ffffff;
-}
-
-.backgrounds-section img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-.backgrounds-section button:hover {
-  cursor: pointer;
-}
-
 .time-section {
-  position: absolute;
-  display: none;
+  position: relative;
+  display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  justify-content: center;
+  justify-content: baseline;
   align-items: center;
+}
+
+.time-section div {
+  position: relative;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  top: 10px;
+  width: 100%;
+  left: 15px;
+  padding: 5px;
+}
+
+.time-section div label {
+  color: white;
 }
 
 .time-section h1 {
+  position: relative;
   color: white;
   text-align: center;
-  font-size: 1.1vw;
+  font-size: 1.25vw;
   letter-spacing: 3px;
   margin-top: 15%;
+}
+
+.feedback-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-section a {
+  background: #4e9caf;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.divider {
+  width: 80%;
+  height: 2px;
+  background-color: rgb(170, 170, 170, 0.5);
 }
 
 /* Settings Arrows CSS */

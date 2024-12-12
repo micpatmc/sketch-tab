@@ -334,28 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // #endregion
 
-// #region Save previous backgrounds
-savedBG1.addEventListener("click", changeBackground1);
-savedBG2.addEventListener("click", changeBackground2);
-savedBG3.addEventListener("click", changeBackground3);
-
-function changeBackground1() {
-  backgroundPic.style.backgroundImage = "url(" + savedBG1.src + ")";
-  localStorage.setItem("recent-image", savedBG1.src);
-}
-
-function changeBackground2() {
-  backgroundPic.style.backgroundImage = "url(" + savedBG2.src + ")";
-  localStorage.setItem("recent-image", savedBG2.src);
-}
-
-function changeBackground3() {
-  backgroundPic.style.backgroundImage = "url(" + savedBG3.src + ")";
-  localStorage.setItem("recent-image", savedBG3.src);
-}
-
-// #endregion
-
 // #region Change text color
 settings_ColorBtns = document.querySelectorAll(".colors-section .option");
 
@@ -450,56 +428,11 @@ settings_colorpicker.addEventListener("change", () => {
 
 // #endregion
 
-// #region Toggle settings menu
-var counter = 1;
+// #region Check the "display seconds" checkbox for time formatting
 
-var colorsSection = document.querySelector(".colors-section");
-var backgroundsSection = document.querySelector(".backgrounds-section");
-var timeSection = document.querySelector(".time-section");
-var leftButton = document.querySelector(".settings-next-left");
-var rightButton = document.querySelector(".settings-next-right");
+const secondsCheckbox = document.getElementById("display-seconds");
 
-rightButton.addEventListener("click", toggleButtonIncrease);
-leftButton.addEventListener("click", toggleButtonDecrease);
-
-function toggleButtonIncrease() {
-  counter++;
-
-  if (counter > 3) counter = 1;
-
-  if (counter == 1) {
-    colorsSection.style.display = "flex";
-    backgroundsSection.style.display = "none";
-    timeSection.style.display = "none";
-  } else if (counter == 2) {
-    colorsSection.style.display = "none";
-    backgroundsSection.style.display = "flex";
-    timeSection.style.display = "none";
-  } else if (counter == 3) {
-    colorsSection.style.display = "none";
-    backgroundsSection.style.display = "none";
-    timeSection.style.display = "flex";
-  }
-}
-
-function toggleButtonDecrease() {
-  counter--;
-
-  if (counter < 1) counter = 3;
-
-  if (counter == 1) {
-    colorsSection.style.display = "flex";
-    backgroundsSection.style.display = "none";
-    timeSection.style.display = "none";
-  } else if (counter == 2) {
-    colorsSection.style.display = "none";
-    backgroundsSection.style.display = "flex";
-    timeSection.style.display = "none";
-  } else if (counter == 3) {
-    colorsSection.style.display = "none";
-    backgroundsSection.style.display = "none";
-    timeSection.style.display = "flex";
-  }
+if (secondsCheckbox.checked) {
 }
 
 // #endregion
