@@ -404,6 +404,15 @@ input:checked + .slider:before {
   color: white;
   font-weight: bold;
   text-decoration: none;
+  transition: 0.3s ease-out;
+}
+
+.feedback-section a:hover {
+  background: #4990a1;
+}
+
+.feedback-section a:active {
+  background: #3e7b8a;
 }
 
 .divider {
