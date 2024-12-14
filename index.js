@@ -428,11 +428,67 @@ settings_colorpicker.addEventListener("change", () => {
 
 // #endregion
 
-// #region Check the "display seconds" checkbox for time formatting
+// #region Check the "display seconds" and "am/pm" checkboxes for time formatting
 
 const secondsCheckbox = document.getElementById("display-seconds");
+const amPmCheckbox = document.getElementById("display-am-pm");
+const secondsText = document.getElementById("seconds-container");
+const amPmText = document.getElementById("session");
 
-if (secondsCheckbox.checked) {
-}
+secondsCheckbox.addEventListener('change', function () {
+  localStorage.setItem("seconds-checkbox-status", secondsCheckbox.checked);
+  
+  if (secondsCheckbox.checked) {
+    secondsText.style.display = "contents";
+  } else {
+    secondsText.style.display = "none";
+  }
+});
+
+amPmCheckbox.addEventListener('change', function () {
+  localStorage.setItem("ampm-checkbox-status", amPmCheckbox.checked);
+  
+  if (amPmCheckbox.checked) {
+    amPmText.style.display = "contents";
+  } else {
+    amPmText.style.display = "none";
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const secondsCheckboxStatus = localStorage.getItem("seconds-checkbox-status");
+  const amPmCheckboxStatus = localStorage.getItem("ampm-checkbox-status");
+
+  if (secondsCheckboxStatus !== null) {
+    if (secondsCheckboxStatus === "false")
+      secondsCheckbox.checked = false;
+    else
+    secondsCheckbox.checked = true;
+  } else {
+    secondsCheckbox.checked = true;
+  }
+
+  if (amPmCheckboxStatus !== null) {
+    if (amPmCheckboxStatus === "false")
+      amPmCheckbox.checked = false;
+    else
+      amPmCheckbox.checked = true;
+  } else {
+    amPmCheckbox.checked = true;
+  }
+  
+  if (secondsCheckbox.checked) {
+    secondsText.style.display = "contents";
+  } else {
+    secondsText.style.display = "none";
+  }
+
+  if (amPmCheckbox.checked) {
+    amPmText.style.display = "contents";
+  } else {
+    amPmText.style.display = "none";
+  }
+});
 
 // #endregion
