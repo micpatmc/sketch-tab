@@ -446,7 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
     else
     secondsCheckbox.checked = true;
   } else {
-    secondsCheckbox.checked = true;
+    secondsCheckbox.checked = false;
   }
 
   if (amPmCheckboxStatus !== null) {
