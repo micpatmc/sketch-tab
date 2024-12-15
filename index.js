@@ -346,11 +346,6 @@ settings_switchText = document.getElementById("switch-text");
 settings_textColor = document.getElementById("text-color");
 settings_textBackground = document.getElementById("text-background");
 settings_textTime = document.getElementById("text-time");
-
-// settings_toolbar = document.getElementById("toolbar-text");
-// settings_shapes = document.getElementById("shapes-text");
-// settings_other = document.getElementById("other-text");
-
 settings_colorpicker = document.getElementById("settings-color-picker");
 
 settings_ColorBtns.forEach((btn) => {
@@ -380,11 +375,6 @@ settings_ColorBtns.forEach((btn) => {
     settings_switchText.style.color = window
       .getComputedStyle(btn)
       .getPropertyValue("color");
-    // settings_textColor.style.color = window.getComputedStyle(btn).getPropertyValue("color");
-    // settings_toolbar.style.color = window.getComputedStyle(btn).getPropertyValue("color");
-    // settings_shapes.style.color = window.getComputedStyle(btn).getPropertyValue("color");
-    // settings_other.style.color = window.getComputedStyle(btn).getPropertyValue("color");
-    // settings_textBackground.style.color = window.getComputedStyle(btn).getPropertyValue("color");
 
     localStorage.setItem(
       "text-color",
@@ -402,11 +392,6 @@ document.addEventListener("DOMContentLoaded", () => {
   settings_session.style.color = recentTextColor;
   settings_upload.style.color = recentTextColor;
   settings_switchText.style.color = recentTextColor;
-  // settings_textColor.style.color = recentTextColor;
-  // settings_toolbar.style.color = recentTextColor;
-  // settings_shapes.style.color = recentTextColor;
-  // settings_other.style.color = recentTextColor;
-  // settings_textBackground.style.color = recentTextColor;
 });
 
 settings_colorpicker.addEventListener("change", () => {
@@ -419,11 +404,6 @@ settings_colorpicker.addEventListener("change", () => {
   settings_session.style.color = settings_colorpicker.value;
   settings_upload.style.color = settings_colorpicker.value;
   settings_switchText.style.color = settings_colorpicker.value;
-  // settings_textColor.style.color = settings_colorpicker.value;
-  // settings_toolbar.style.color = settings_colorpicker.value;
-  // settings_shapes.style.color = settings_colorpicker.value;
-  // settings_other.style.color = settings_colorpicker.value;
-  // settings_textBackground.style.color = settings_colorpicker.value;
 });
 
 // #endregion
