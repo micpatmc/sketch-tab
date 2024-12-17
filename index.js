@@ -1,4 +1,3 @@
-// #region Drawing logic
 // References
 const canvas = document.getElementById("drawing-board");
 toolBtns = document.querySelectorAll(".tool");
@@ -11,8 +10,7 @@ clearCanvas = document.querySelector("#clear-canvas");
 saveImg = document.querySelector("#save-image");
 const ctx = canvas.getContext("2d");
 
-// Variables to determine mouse position, whether the user is drawing,
-// and then the tool, brush width, and draw color
+// Variables to determine mouse position, whether the user is drawing, and then the tool, brush width, and draw color
 let prevMouseX,
   prevMouseY,
   snapshot,
@@ -184,9 +182,7 @@ canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 
-// #endregion
-
-// #region Pick random background color
+// Pick random background color
 var background_colors = ["#bedcff", "#ffc4c4", "#c9ffd8", "#fdbcff", "#bcf8ff"];
 var background_bottom_colors = [
   "#1f3c61",
@@ -207,9 +203,7 @@ document.getElementById("background-bottom-ID-2").style.backgroundColor =
 document.getElementById("background-bottom-ID-3").style.backgroundColor =
   background_bottom_colors[ran];
 
-// #endregion
-
-// #region Switch between searching and drawing
+// Switch between searching and drawing
 const checkbox = document.getElementById("switch-input");
 
 const drawingBackground = document.getElementById("drawing-background");
@@ -246,9 +240,7 @@ checkbox.addEventListener("change", (event) => {
   }
 });
 
-// #endregion
-
-// #region Change time logic
+// Change time logic
 function displayime() {
   var dateTime = new Date();
   var hrs = dateTime.getHours();
@@ -279,14 +271,10 @@ function displayime() {
 
 setInterval(displayime, 10);
 
-// #endregion
-
-// #region Change background photo
+// Change background photo
 let backgroundPic = document.getElementById("background-ID");
 let inputFile = document.getElementById("input-file");
-
 let bgButton1 = document.getElementById("saved-background-1");
-
 var savedBG1 = document.getElementById("saved-background-img-1");
 var savedBG2 = document.getElementById("saved-background-img-2");
 var savedBG3 = document.getElementById("saved-background-img-3");
@@ -332,11 +320,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedBG3Data) savedBG3.src = localStorage.getItem("saved-image-3");
 });
 
-// #endregion
-
-// #region Change text color
+// Change text color
 settings_ColorBtns = document.querySelectorAll(".colors-section .option");
-
 settings_hours = document.getElementById("hours");
 settings_minutes = document.getElementById("minutes");
 settings_separation = document.getElementById("time-separation");
@@ -406,10 +391,7 @@ settings_colorpicker.addEventListener("change", () => {
   settings_switchText.style.color = settings_colorpicker.value;
 });
 
-// #endregion
-
-// #region Check the "display seconds" and "am/pm" checkboxes for time formatting
-
+// Check the "display seconds" and "am/pm" checkboxes for time formatting
 const secondsCheckbox = document.getElementById("display-seconds");
 const amPmCheckbox = document.getElementById("display-am-pm");
 const secondsText = document.getElementById("seconds-container");
@@ -470,5 +452,3 @@ document.addEventListener("DOMContentLoaded", () => {
     amPmText.style.display = "none";
   }
 });
-
-// #endregion
