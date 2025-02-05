@@ -245,7 +245,6 @@ function displayime() {
   var dateTime = new Date();
   var hrs = dateTime.getHours();
   var min = dateTime.getMinutes();
-  var sec = dateTime.getSeconds();
   var session = document.getElementById("session");
 
   if (hrs >= 12) {
@@ -266,7 +265,6 @@ function displayime() {
 
   document.getElementById("hours").innerHTML = hrs;
   document.getElementById("minutes").innerHTML = min;
-  document.getElementById("seconds").innerHTML = sec;
 }
 
 setInterval(displayime, 10);
@@ -331,7 +329,6 @@ settings_switchText = document.getElementById("switch-text");
 settings_textColor = document.getElementById("text-color");
 settings_textBackground = document.getElementById("text-background");
 settings_textTime = document.getElementById("text-time");
-settings_colorpicker = document.getElementById("settings-color-picker");
 
 settings_ColorBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -366,89 +363,4 @@ settings_ColorBtns.forEach((btn) => {
       window.getComputedStyle(btn).getPropertyValue("color")
     );
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const recentTextColor = localStorage.getItem("text-color");
-
-  settings_hours.style.color = recentTextColor;
-  settings_minutes.style.color = recentTextColor;
-  settings_separation.style.color = recentTextColor;
-  settings_session.style.color = recentTextColor;
-  settings_upload.style.color = recentTextColor;
-  settings_switchText.style.color = recentTextColor;
-});
-
-settings_colorpicker.addEventListener("change", () => {
-  settings_colorpicker.style.backgroundColor = settings_colorpicker.value;
-  settings_colorpicker.style.color = settings_colorpicker.value;
-
-  settings_hours.style.color = settings_colorpicker.value;
-  settings_minutes.style.color = settings_colorpicker.value;
-  settings_separation.style.color = settings_colorpicker.value;
-  settings_session.style.color = settings_colorpicker.value;
-  settings_upload.style.color = settings_colorpicker.value;
-  settings_switchText.style.color = settings_colorpicker.value;
-});
-
-// Check the "display seconds" and "am/pm" checkboxes for time formatting
-const secondsCheckbox = document.getElementById("display-seconds");
-const amPmCheckbox = document.getElementById("display-am-pm");
-const secondsText = document.getElementById("seconds-container");
-const amPmText = document.getElementById("session");
-
-secondsCheckbox.addEventListener('change', function () {
-  localStorage.setItem("seconds-checkbox-status", secondsCheckbox.checked);
-  
-  if (secondsCheckbox.checked) {
-    secondsText.style.display = "contents";
-  } else {
-    secondsText.style.display = "none";
-  }
-});
-
-amPmCheckbox.addEventListener('change', function () {
-  localStorage.setItem("ampm-checkbox-status", amPmCheckbox.checked);
-  
-  if (amPmCheckbox.checked) {
-    amPmText.style.display = "contents";
-  } else {
-    amPmText.style.display = "none";
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const secondsCheckboxStatus = localStorage.getItem("seconds-checkbox-status");
-  const amPmCheckboxStatus = localStorage.getItem("ampm-checkbox-status");
-
-  if (secondsCheckboxStatus !== null) {
-    if (secondsCheckboxStatus === "false")
-      secondsCheckbox.checked = false;
-    else
-    secondsCheckbox.checked = true;
-  } else {
-    secondsCheckbox.checked = false;
-  }
-
-  if (amPmCheckboxStatus !== null) {
-    if (amPmCheckboxStatus === "false")
-      amPmCheckbox.checked = false;
-    else
-      amPmCheckbox.checked = true;
-  } else {
-    amPmCheckbox.checked = true;
-  }
-  
-  if (secondsCheckbox.checked) {
-    secondsText.style.display = "contents";
-  } else {
-    secondsText.style.display = "none";
-  }
-
-  if (amPmCheckbox.checked) {
-    amPmText.style.display = "contents";
-  } else {
-    amPmText.style.display = "none";
-  }
 });
