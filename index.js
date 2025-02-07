@@ -207,7 +207,7 @@ document.getElementById("background-bottom-ID-3").style.backgroundColor =
 const checkbox = document.getElementById("switch-input");
 
 const drawingBackground = document.getElementById("drawing-background");
-const searchingBackground = document.getElementById("searching-background");
+const searchingBackground = document.getElementById("time-background");
 const switchText = document.getElementById("switch-text");
 
 window.onload = setScreen = () => {

@@ -88,7 +88,7 @@
 #input-file-text {
   color: white;
   position: absolute;
-  top: 380px;
+  top: 300px;
   font-size: 22.5px;
   opacity: 0.8;
   transition: opacity 0.5s ease-out;
@@ -178,7 +178,7 @@ input:checked + .slider:before {
 }
 
 /* SEARCHING CSS */
-.searching-background {
+.time-background {
   display: flex;
   position: relative;
   background-color: transparent;
@@ -202,48 +202,6 @@ input:checked + .slider:before {
   color: white;
   font-size: 120px;
   text-shadow: 5px 5px 0vw rgb(0, 0, 0, 0.25);
-}
-
-/* Search bar CSS */
-.search-bar {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  top: 300px;
-  max-height: 55px;
-  max-width: 700px;
-  width: 100%;
-  border-radius: 60px;
-  padding: 10px 20px;
-  background: rgb(255, 255, 255, 1);
-  backdrop-filter: blur(4px) saturate(180%);
-}
-
-.search-bar input {
-  background: transparent;
-  flex: 1;
-  border: 0;
-  outline: none;
-  padding: 24px 20px;
-  font-size: 20px;
-  color: #a0a0a0;
-}
-
-::placeholder {
-  color: #a0a0a0;
-}
-
-.search-bar button img {
-  width: 25px;
-}
-
-.search-bar button {
-  border: 0;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  background: #3f3f3f;
-  cursor: pointer;
 }
 
 /* DRAWING CSS */
